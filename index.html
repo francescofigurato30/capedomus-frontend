@@ -3,139 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capè Domus | San Lucido</title>
+    <title>Capè Domus | Boutique Apartments San Lucido</title>
     <style>
+        :root {
+            --primary: #8b7355;
+            --secondary: #eaddcf;
+            --bg-color: #fcfbf9;
+            --text-dark: #333333;
+            --text-light: #5a4b3c;
+        }
         body {
             font-family: 'Georgia', serif;
-            background-color: #fcfbf9; /* Beige caldo */
-            color: #5a4b3c;
-            margin: 0;
-            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            margin: 0; padding: 0; line-height: 1.6;
         }
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background-color: #eaddcf;
-            border-bottom: 1px solid #d3c5b3;
+        /* Navbar */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 50px; background-color: white;
+            border-bottom: 1px solid var(--secondary); position: sticky; top: 0; z-index: 100;
         }
-        h1 {
-            font-size: 2.8em;
-            margin: 0;
-            color: #8b7355;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        nav h2 { margin: 0; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; }
+        nav a { text-decoration: none; color: var(--text-dark); margin-left: 20px; font-weight: bold; }
+        
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1499916078039-922301b0eb9b?auto=format&fit=crop&w=1600&q=80') center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white;
         }
-        p.subtitle {
-            font-size: 1.2em;
-            font-style: italic;
-            margin-top: 10px;
+        .hero h1 { font-size: 3.5em; margin-bottom: 10px; letter-spacing: 3px; text-transform: uppercase; }
+        .hero p { font-size: 1.5em; font-style: italic; margin-top: 0; }
+        .btn-primary {
+            padding: 15px 30px; background-color: var(--primary); color: white;
+            text-decoration: none; font-size: 1.1em; text-transform: uppercase;
+            letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s;
         }
+        .btn-primary:hover { background-color: #6b573d; }
+
+        /* Vetrina Case */
+        .section-title { text-align: center; color: var(--primary); font-size: 2.5em; margin: 60px 0 20px; }
+        .grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; padding: 0 50px; }
+        .card {
+            background: white; width: 350px; border: 1px solid var(--secondary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+        .card-content { padding: 20px; text-align: center; }
+        .card h3 { color: var(--primary); margin: 0 0 10px 0; }
+
+        /* Form di Prenotazione */
         #booking-section {
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 30px;
-            background-color: #ffffff;
-            border: 1px solid #e0d5c1;
-            border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-width: 600px; margin: 80px auto; padding: 40px; background-color: white;
+            border: 1px solid var(--secondary); box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        label {
-            font-size: 14px;
-            color: #333;
+        label { display: block; font-size: 14px; margin-top: 15px; color: var(--text-dark); }
+        input, select {
+            width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ccc;
+            box-sizing: border-box; font-family: inherit; background: var(--bg-color);
         }
-        input {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0 20px 0;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            font-family: inherit;
-        }
-        button {
-            width: 100%;
-            padding: 15px;
-            background-color: #8b7355;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #6b573d;
-        }
+        .flex-row { display: flex; gap: 15px; }
+        .flex-row > div { width: 50%; }
+
+        /* Footer */
+        footer { text-align: center; padding: 40px; background-color: var(--secondary); margin-top: 60px; }
     </style>
 </head>
 <body>
 
-    <header>
+    <nav>
+        <h2>Capè Domus</h2>
+        <div>
+            <a href="#case">Le Case</a>
+            <a href="#booking-section">Prenota</a>
+        </div>
+    </nav>
+
+    <div class="hero">
         <h1>Capè Domus</h1>
-        <p class="subtitle">Boutique Apartments a San Lucido</p>
-    </header>
+        <p>L'eleganza rustica nel cuore di San Lucido</p>
+        <a href="#booking-section" class="btn-primary" style="margin-top: 20px;">Verifica Disponibilità</a>
+    </div>
+
+    <h2 id="case" class="section-title">Le Nostre Dimore</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Casa Marina">
+            <div class="card-content">
+                <h3>Casa Marina</h3>
+                <p>Il respiro del mare direttamente alla tua finestra. Tonalità calde, design mediterraneo e comfort totale a pochi passi dalla spiaggia.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1502672260266-1c1c2b441552?auto=format&fit=crop&w=800&q=80" alt="Casa Paese">
+            <div class="card-content">
+                <h3>Casa Paese</h3>
+                <p>Immersa nel fascino del centro storico. Arredi su misura, dettagli in legno rustico e un'atmosfera intima e senza tempo.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80" alt="Casa Contessa">
+            <div class="card-content">
+                <h3>Casa Contessa</h3>
+                <p>L'apice dell'eleganza boutique. Spazi ampi, luce naturale e una cura per il dettaglio pensata per i viaggiatori più esigenti.</p>
+            </div>
+        </div>
+    </div>
 
     <div id="booking-section">
-        <h3 style="text-align: center; margin-top: 0;">Richiedi Disponibilità</h3>
-        
+        <h2 style="text-align: center; color: var(--primary); margin-top: 0;">Richiedi il tuo Soggiorno</h2>
         <form id="form-prenotazione">
+            <label for="casa_selezionata">Quale casa desideri?</label>
+            <select id="casa_selezionata" required>
+                <option value="" disabled selected>Seleziona un appartamento...</option>
+                <option value="casa-marina">Casa Marina</option>
+                <option value="casa-paese">Casa Paese</option>
+                <option value="casa-contessa">Casa Contessa</option>
+            </select>
+
             <label for="nome">Nome e Cognome</label>
-            <input type="text" id="nome" required>
+            <input type="text" id="nome" placeholder="Mario Rossi" required>
 
             <label for="email">Email</label>
-            <input type="email" id="email" required>
+            <input type="email" id="email" placeholder="mario@email.com" required>
 
-            <div style="display: flex; justify-content: space-between; gap: 15px;">
-                <div style="width: 50%;">
+            <div class="flex-row">
+                <div>
                     <label for="check_in">Check-in</label>
                     <input type="date" id="check_in" required>
                 </div>
-                <div style="width: 50%;">
+                <div>
                     <label for="check_out">Check-out</label>
                     <input type="date" id="check_out" required>
                 </div>
             </div>
 
-            <button type="submit">Invia Richiesta</button>
+            <button type="submit" class="btn-primary" style="width: 100%; margin-top: 25px;">Invia Richiesta</button>
         </form>
-        <div id="messaggio-risposta" style="margin-top: 20px; font-size: 15px; text-align: center; font-weight: bold;"></div>
+        <div id="messaggio-risposta" style="margin-top: 20px; text-align: center; font-weight: bold;"></div>
     </div>
 
+    <footer>
+        <h3 style="color: var(--primary); margin: 0;">Capè Domus</h3>
+        <p style="margin: 5px 0;">San Lucido, Calabria | Boutique Apartments</p>
+    </footer>
+
     <script>
-        // Indirizzo del tuo backend su Vercel
         const API_BASE_URL = "https://capedomus-backend.vercel.app";
 
         document.getElementById('form-prenotazione').addEventListener('submit', function(e) {
             e.preventDefault(); 
+            const boxMessaggio = document.getElementById('messaggio-risposta');
+            boxMessaggio.innerText = "Elaborazione della richiesta in corso...";
+            boxMessaggio.style.color = "var(--primary)";
 
             const datiPrenotazione = {
+                casa: document.getElementById('casa_selezionata').value,
                 nome: document.getElementById('nome').value,
                 email: document.getElementById('email').value,
                 check_in: document.getElementById('check_in').value,
                 check_out: document.getElementById('check_out').value
             };
 
-            const boxMessaggio = document.getElementById('messaggio-risposta');
-            boxMessaggio.innerText = "Elaborazione della richiesta in corso...";
-            boxMessaggio.style.color = "#8b7355";
-
             fetch(`${API_BASE_URL}/api/richiesta/`, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(datiPrenotazione)
             })
             .then(response => response.json())
             .then(data => {
                 boxMessaggio.innerText = "Richiesta inviata con successo! Ti contatteremo a breve.";
-                boxMessaggio.style.color = "#4CAF50";
+                boxMessaggio.style.color = "green";
                 document.getElementById('form-prenotazione').reset();
             })
             .catch(error => {
-                console.error("Errore:", error);
-                boxMessaggio.innerText = "Servizio momentaneamente non disponibile. Riprova più tardi.";
+                boxMessaggio.innerText = "Errore di connessione. Riprova più tardi.";
                 boxMessaggio.style.color = "red";
             });
         });
