@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capè Domus | San Lucido</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #fcfbf9; /* Beige caldo */
+            color: #5a4b3c;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #eaddcf;
+            border-bottom: 1px solid #d3c5b3;
+        }
+        h1 {
+            font-size: 2.8em;
+            margin: 0;
+            color: #8b7355;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        p.subtitle {
+            font-size: 1.2em;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        #booking-section {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border: 1px solid #e0d5c1;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        label {
+            font-size: 14px;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 20px 0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #8b7355;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #6b573d;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Capè Domus</h1>
+        <p class="subtitle">Boutique Apartments a San Lucido</p>
+    </header>
+
+    <div id="booking-section">
+        <h3 style="text-align: center; margin-top: 0;">Richiedi Disponibilità</h3>
+        
+        <form id="form-prenotazione">
+            <label for="nome">Nome e Cognome</label>
+            <input type="text" id="nome" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+
+            <div style="display: flex; justify-content: space-between; gap: 15px;">
+                <div style="width: 50%;">
+                    <label for="check_in">Check-in</label>
+                    <input type="date" id="check_in" required>
+                </div>
+                <div style="width: 50%;">
+                    <label for="check_out">Check-out</label>
+                    <input type="date" id="check_out" required>
+                </div>
+            </div>
+
+            <button type="submit">Invia Richiesta</button>
+        </form>
+        <div id="messaggio-risposta" style="margin-top: 20px; font-size: 15px; text-align: center; font-weight: bold;"></div>
+    </div>
+
+    <script>
+        // Indirizzo del tuo backend su Vercel
+        const API_BASE_URL = "https://capedomus-backend.vercel.app";
+
+        document.getElementById('form-prenotazione').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const datiPrenotazione = {
+                nome: document.getElementById('nome').value,
+                email: document.getElementById('email').value,
+                check_in: document.getElementById('check_in').value,
+                check_out: document.getElementById('check_out').value
+            };
+
+            const boxMessaggio = document.getElementById('messaggio-risposta');
+            boxMessaggio.innerText = "Elaborazione della richiesta in corso...";
+            boxMessaggio.style.color = "#8b7355";
+
+            fetch(`${API_BASE_URL}/api/richiesta/`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(datiPrenotazione)
+            })
+            .then(response => response.json())
+            .then(data => {
+                boxMessaggio.innerText = "Richiesta inviata con successo! Ti contatteremo a breve.";
+                boxMessaggio.style.color = "#4CAF50";
+                document.getElementById('form-prenotazione').reset();
+            })
+            .catch(error => {
+                console.error("Errore:", error);
+                boxMessaggio.innerText = "Servizio momentaneamente non disponibile. Riprova più tardi.";
+                boxMessaggio.style.color = "red";
+            });
+        });
+    </script>
+</body>
+</html>
