@@ -10,7 +10,9 @@
         nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background-color: white; border-bottom: 1px solid var(--secondary); position: sticky; top: 0; z-index: 100; }
         nav h2 { margin: 0; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; font-size: 1.5em; }
         nav a { text-decoration: none; color: var(--text-dark); margin-left: 20px; font-weight: bold; }
-        .hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1499916078039-922301b0eb9b?auto=format&fit=crop&w=1600&q=80') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; }
+        
+        /* Sfondo Hero: Vista mare dall'alto */
+        .hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1499678329028-101435549a4e?auto=format&fit=crop&w=1600&q=80') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; }
         .hero h1 { font-size: 3.5em; margin-bottom: 10px; letter-spacing: 3px; text-transform: uppercase; }
         .btn-primary { padding: 15px 30px; background-color: var(--primary); color: white; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; display: inline-block; }
         .btn-primary:hover { background-color: #6b573d; }
@@ -24,11 +26,7 @@
         .card img { width: 100%; height: 300px; object-fit: cover; }
         .card-content { padding: 20px; }
         
-        /* Recensioni */
-        .reviews-grid { display: flex; gap: 20px; }
-        .review-card { background: white; padding: 25px; border-left: 4px solid var(--primary); font-style: italic; }
-        
-        /* Form */
+        /* Form e Footer */
         #booking-section { background-color: white; padding: 40px; border: 1px solid var(--secondary); margin-top: 40px; }
         input, select { width: 100%; padding: 12px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; font-family: inherit; }
         footer { text-align: center; padding: 40px; background-color: var(--secondary); }
@@ -41,26 +39,26 @@
         <div>
             <a href="#chi-siamo">Chi Siamo</a>
             <a href="#case">Le Case</a>
-            <a href="#recensioni">Recensioni</a>
+            <a href="eventi.html">Eventi e Sagre</a>
             <a href="#booking-section">Prenota</a>
         </div>
     </nav>
 
     <div class="hero">
         <h1>Capè Domus</h1>
-        <p style="font-size: 1.5em; font-style: italic;">L'eleganza rustica a San Lucido, Calabria</p>
+        <p style="font-size: 1.5em; font-style: italic;">L'eleganza rustica a San Lucido, perla del Tirreno</p>
     </div>
 
     <div id="chi-siamo" class="section" style="text-align: center;">
         <h2 class="section-title">Chi Siamo</h2>
-        <p style="font-size: 1.1em; color: #555;">Siamo un progetto nato dall'amore per l'ospitalità e per il nostro territorio. Capè Domus offre appartamenti boutique accuratamente restaurati, pensati per farvi vivere l'autenticità del sud Italia senza rinunciare ai comfort moderni. Un rifugio elegante dove il mare e la storia si incontrano.</p>
+        <p style="font-size: 1.1em; color: #555;">Siamo un progetto nato dall'amore per l'ospitalità e per il nostro territorio. Capè Domus offre appartamenti boutique accuratamente restaurati, pensati per farvi vivere l'autenticità del sud Italia senza rinunciare ai comfort moderni. Un rifugio elegante dove il mare e la storia di San Lucido si incontrano.</p>
     </div>
 
     <div id="case" class="section">
         <h2 class="section-title">Scegli la tua Dimora</h2>
         <div class="grid">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Casa Marina">
+                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Vista Mare">
                 <div class="card-content">
                     <h3 style="color: var(--primary); font-size: 1.8em;">Casa Marina</h3>
                     <p>Il respiro del mare direttamente alla tua finestra. Tonalità calde e design mediterraneo.</p>
@@ -68,27 +66,11 @@
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1502672260266-1c1c2b441552?auto=format&fit=crop&w=800&q=80" alt="Casa Paese">
+                <img src="https://images.unsplash.com/photo-1516483638261-f4088921eeeb?auto=format&fit=crop&w=800&q=80" alt="Vista Borgo">
                 <div class="card-content">
                     <h3 style="color: var(--primary); font-size: 1.8em;">Casa Paese</h3>
                     <p>Immersa nel fascino del centro storico. Arredi su misura e un'atmosfera senza tempo.</p>
                     <a href="casa-paese.html" class="btn-primary" style="margin-top: 15px;">Scopri la Casa</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="recensioni" class="section" style="background-color: var(--secondary); max-width: 100%;">
-        <div style="max-width: 1000px; margin: 0 auto;">
-            <h2 class="section-title" style="margin-top: 0;">Dicono di noi</h2>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <p>"Un'esperienza meravigliosa! La cura per i dettagli in Casa Marina è incredibile. Ci siamo sentiti coccolati dal primo istante."</p>
-                    <strong>- Elena & Marco</strong>
-                </div>
-                <div class="review-card">
-                    <p>"Casa Paese è un gioiello. Esattamente nel cuore del borgo, comodissima per uscire la sera. Pulizia impeccabile."</p>
-                    <strong>- John Smith</strong>
                 </div>
             </div>
         </div>
@@ -125,14 +107,12 @@
         <h3 style="color: var(--primary); margin: 0;">Capè Domus</h3>
         <p>San Lucido, Calabria | Boutique Apartments</p>
     </footer>
-
     <script>
         const API_BASE_URL = "https://capedomus-backend.vercel.app";
         document.getElementById('form-prenotazione').addEventListener('submit', function(e) {
             e.preventDefault(); 
             const boxMessaggio = document.getElementById('messaggio-risposta');
             boxMessaggio.innerText = "Invio in corso...";
-            
             const dati = {
                 casa: document.getElementById('casa_selezionata').value,
                 nome: document.getElementById('nome').value,
@@ -140,7 +120,6 @@
                 check_in: document.getElementById('check_in').value,
                 check_out: document.getElementById('check_out').value
             };
-
             fetch(`${API_BASE_URL}/api/richiesta/`, {
                 method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(dati)
             }).then(r => r.json()).then(data => {
