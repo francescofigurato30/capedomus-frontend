@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventi e Sagre | Capè Domus</title>
+    <style>
+        body { font-family: 'Georgia', serif; margin: 0; background: #fcfbf9; color: #333; line-height: 1.6; }
+        nav { padding: 20px 50px; background: white; border-bottom: 1px solid #eaddcf; position: sticky; top: 0; z-index: 100;}
+        nav a { text-decoration: none; color: #8b7355; font-weight: bold; font-size: 1.1em; text-transform: uppercase; }
+        
+        .header-img { width: 100%; height: 50vh; object-fit: cover; filter: brightness(80%); }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        h1 { color: #8b7355; font-size: 3em; margin-bottom: 10px; text-align: center; text-transform: uppercase;}
+        p.intro { text-align: center; font-size: 1.2em; color: #555; margin-bottom: 50px; font-style: italic; }
+
+        .event-card { display: flex; flex-direction: row; background: white; border: 1px solid #eaddcf; margin-bottom: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+        .event-card img { width: 40%; object-fit: cover; }
+        .event-content { padding: 30px; width: 60%; display: flex; flex-direction: column; justify-content: center; }
+        .event-date { color: #8b7355; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        .event-title { font-size: 1.8em; margin: 0 0 15px 0; color: #333; }
+        
+        @media (max-width: 768px) {
+            .event-card { flex-direction: column; }
+            .event-card img, .event-content { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <nav><a href="index.html">← Torna alla Home</a></nav>
+    
+    <!-- Immagine vista paese/mare -->
+    <img src="https://images.unsplash.com/photo-1516483638261-f4088921eeeb?auto=format&fit=crop&w=1600&q=80" class="header-img" alt="Vista del borgo">
+    
+    <div class="container">
+        <h1>Sagre e Tradizioni</h1>
+        <p class="intro">Scopri il folklore, i sapori e i colori che animano le strade di San Lucido tutto l'anno.</p>
+        
+        <div class="event-card">
+            <img src="https://images.unsplash.com/photo-1563806782531-15b9c027c4fb?auto=format&fit=crop&w=600&q=80" alt="Carnevale">
+            <div class="event-content">
+                <div class="event-date">Febbraio / Marzo</div>
+                <h2 class="event-title">Carnevale di San Lucido</h2>
+                <p>Una delle tradizioni più sentite della costa tirrenica. Le vie del paese si riempiono di colori con la sfilata dei carri allegorici, maschere artigianali e gruppi danzanti. Un momento di pura festa che coinvolge abitanti e turisti in balli, musica e degustazioni di dolci tipici come le chiacchiere.</p>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <img src="https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?auto=format&fit=crop&w=600&q=80" alt="Sagra delle Alici">
+            <div class="event-content">
+                <div class="event-date">Luglio</div>
+                <h2 class="event-title">La Sagra delle Alici</h2>
+                <p>L'evento enogastronomico per eccellenza dell'estate sanlucidana. Le piazze si inebriano del profumo del mare con fritture di alici fresche pescate localmente, preparate secondo le antiche ricette dei pescatori. Il tutto accompagnato da vino locale, canti popolari e tavolate sotto le stelle.</p>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" alt="Via dei Lampadari">
+            <div class="event-content">
+                <div class="event-date">Agosto</div>
+                <h2 class="event-title">La Via dei Lampadari</h2>
+                <p>Una notte magica in cui il centro storico si trasforma in un salotto a cielo aperto. I caratteristici vicoli in pietra vengono illuminati da decine di eleganti lampadari di cristallo sospesi. Un'atmosfera romantica e suggestiva, ideale per passeggiare tra mostre d'arte, musica dal vivo e piccoli bistrot aperti fino a tardi.</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
