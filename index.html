@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capè Domus | Visita San Lucido</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- FontAwesome per le icone e WhatsApp -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -20,8 +19,8 @@
             font-family: 'Lora', serif; 
             color: var(--text-blue); 
             margin: 0; padding: 0; line-height: 1.7; scroll-behavior: smooth;
-            /* Immagine Hero Aggiornata: Il Belvedere */
-            background: url('image_14.png') no-repeat center center fixed; 
+            /* Sfondo Hero con fallback sicuro */
+            background: linear-gradient(rgba(10, 61, 98, 0.4), rgba(10, 61, 98, 0.4)), url('belvedere.jpg') no-repeat center center fixed; 
             background-size: cover;
         }
 
@@ -30,7 +29,6 @@
             color: var(--primary-blue);
         }
         
-        /* Effetto Vetro Generico */
         .glass-panel {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
@@ -40,7 +38,6 @@
             border-radius: 16px;
         }
 
-        /* Navbar */
         nav { 
             display: flex; justify-content: space-between; align-items: center; 
             padding: 15px 30px; position: sticky; top: 10px; z-index: 100; 
@@ -53,10 +50,14 @@
             gap: 15px;
         }
 
-        .brand-logo {
-            height: 50px;
-            width: auto;
-            object-fit: contain;
+        .brand-logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
         }
 
         .brand-title-wrapper {
@@ -82,7 +83,6 @@
         }
         nav a:hover { opacity: 0.7; }
 
-        /* Stile moderno e pulito per Google Traduttore */
         .goog-te-banner-frame.skiptranslate { display: none !important; }
         body { top: 0 !important; }
         
@@ -101,7 +101,6 @@
         .goog-logo-link, .goog-te-gadget span { display: none !important; }
         .goog-te-gadget { color: transparent !important; font-size: 0 !important; }
         
-        /* Hero con Colonne lunghe e stilizzate */
         .hero { 
             height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px;
         }
@@ -127,19 +126,16 @@
             font-size: 1.4em; font-style: italic; color: white; text-shadow: 0 2px 10px rgba(10, 61, 98, 0.9); 
         }
         
-        /* Sezioni Generiche */
         .section { padding: 60px 20px; max-width: 1200px; margin: 30px auto; }
         .section-title { text-align: center; font-size: 2.8em; margin-bottom: 15px; font-weight: 700; }
         .section-subtitle { text-align: center; font-size: 1.1em; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; font-weight: 600; }
         
-        /* Layout Storia e Cilla */
         .history-layout { display: flex; gap: 30px; align-items: stretch; margin-top: 20px; }
         .history-text { flex: 1; padding: 30px; font-size: 1.05em; font-weight: 500; text-align: justify; }
         .history-text h3 { font-size: 1.6em; margin-top: 0; margin-bottom: 15px; }
         .history-img { flex: 1; border-radius: 16px; overflow: hidden; min-height: 320px; }
         .history-img img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Griglia 4 Colonne (Sagre) */
         .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
         .event-card { overflow: hidden; transition: transform 0.3s; display: flex; flex-direction: column; }
         .event-card:hover { transform: translateY(-8px); }
@@ -149,7 +145,6 @@
         .event-title { font-size: 1.25em; margin: 0 0 8px 0; font-weight: 700; }
         .event-desc { font-size: 0.9em; font-weight: 500; flex-grow: 1; }
 
-        /* Griglia 3 Colonne (Esperienze) */
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 30px; }
         .activity-card { text-align: center; padding: 30px 20px; transition: 0.3s; }
         .activity-card:hover { transform: translateY(-5px); }
@@ -157,7 +152,6 @@
         .activity-card h3 { font-size: 1.4em; margin-bottom: 10px; }
         .activity-card p { font-size: 0.95em; font-weight: 500; }
 
-        /* Pulsante WhatsApp Fluttuante */
         .whatsapp-float {
             position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white;
             width: 60px; height: 60px; border-radius: 50%; text-align: center; font-size: 32px;
@@ -166,7 +160,6 @@
         }
         .whatsapp-float:hover { transform: scale(1.1); }
 
-        /* Footer */
         footer { text-align: center; padding: 40px 20px; margin: 50px 20px 20px 20px; }
         footer h3 { letter-spacing: 2px; margin-bottom: 10px; font-size: 1.6em; }
         
@@ -188,10 +181,10 @@
     <!-- Navbar con Logo e Colonne -->
     <nav class="glass-panel">
         <div class="brand-container">
-            <img src="logo.png" alt="Logo Capè Domus" class="brand-logo" onerror="this.style.display='none'">
+            <a href="#" class="brand-logo-text">Capè Domus</a>
             <div class="brand-title-wrapper">
                 <i class="fa-solid fa-landmark column-icon"></i>
-                <h2>Capè Domus</h2>
+                <h2>San Lucido</h2>
                 <i class="fa-solid fa-landmark column-icon"></i>
             </div>
         </div>
@@ -208,10 +201,9 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Sezione Hero con Colonne lunghe e stilizzate -->
+    <!-- Sezione Hero -->
     <header class="hero">
         <div class="hero-title-container">
-            <!-- Colonna Classica Stilizzata Sinistra -->
             <svg class="hero-column" viewBox="0 0 100 300" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10,10 H90 V35 H10 Z M20,35 H80 V50 H20 Z M30,50 H70 V250 H30 Z M20,250 H80 V265 H20 Z M10,265 H90 V290 H10 Z"/>
                 <line x1="36" y1="55" x2="36" y2="245" stroke="#0a3d62" stroke-width="4"/>
@@ -221,7 +213,6 @@
             
             <h1>San Lucido</h1>
             
-            <!-- Colonna Classica Stilizzata Destra -->
             <svg class="hero-column" viewBox="0 0 100 300" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10,10 H90 V35 H10 Z M20,35 H80 V50 H20 Z M30,50 H70 V250 H30 Z M20,250 H80 V265 H20 Z M10,265 H90 V290 H10 Z"/>
                 <line x1="36" y1="55" x2="36" y2="245" stroke="#0a3d62" stroke-width="4"/>
@@ -232,7 +223,7 @@
         <p>Un viaggio tra mare, storia e leggende autentiche</p>
     </header>
 
-    <!-- Sezione Storia e Leggenda di Cilla (con Immagine) -->
+    <!-- Sezione Storia e Leggenda di Cilla -->
     <section id="storia" class="section">
         <div class="glass-panel" style="padding: 40px;">
             <h2 class="section-title">Le Nostre Radici</h2>
@@ -247,8 +238,7 @@
                     <p>Si narra la triste storia di Cilla, una giovane e bellissima donna sanlucidana, e del suo amato pescatore Tutù. In un giorno di feroce tempesta, l'imbarcazione del giovane si rovesciò tra i flutti. Cilla, impazzita dal dolore e sperando di salvarlo o di unirsi a lui per l'eternità, si gettò nel mare in tempesta dalla rupe. Oggi la statua di Cilla scruta malinconica l'orizzonte dal belvedere, simbolo dell'amore incondizionato e del legame indissolubile tra il borgo e il suo mare.</p>
                 </div>
                 <div class="history-img">
-                    <!-- Immagine Storia Aggiornata: Cilla al Tramonto -->
-                    <img src="image_7.png" alt="Statua della Leggenda di Cilla a San Lucido al tramonto" onerror="this.src='Cilla_-_San_Lucido.jpg'">
+                    <img src="cilla.jpg" alt="Statua della Leggenda di Cilla a San Lucido" onerror="this.src='https://images.unsplash.com/photo-1518331647614-7a1f04cd34ce?auto=format&fit=crop&w=800&q=80'">
                 </div>
             </div>
         </div>
@@ -261,8 +251,7 @@
         
         <div class="grid-4">
             <div class="event-card glass-panel">
-                <!-- Immagine A Vulata Aggiornata (senza anno) -->
-                <img src="image_13.png" alt="Carnevale Estivo 'A Vulata" onerror="this.src='https://images.unsplash.com/photo-1533174000255-14f77d4c82c3?auto=format&fit=crop&w=600&q=80'">
+                <img src="a-vulata.jpg" alt="Carnevale Estivo 'A Vulata">
                 <div class="event-content">
                     <div class="event-date">19 - 21 Luglio</div>
                     <h3 class="event-title">Carnevale "'A Vulata"</h3>
@@ -270,7 +259,7 @@
                 </div>
             </div>
             <div class="event-card glass-panel">
-                <img src="image_15.png" alt="Sagra delle Alici" onerror="this.src='https://images.unsplash.com/photo-1544378125-9626b9a8976b?auto=format&fit=crop&w=600&q=80'">
+                <img src="alici.jpg" alt="Sagra delle Alici">
                 <div class="event-content">
                     <div class="event-date">30 Luglio - 2 Agosto</div>
                     <h3 class="event-title">Sagra delle Alici</h3>
@@ -278,7 +267,7 @@
                 </div>
             </div>
             <div class="event-card glass-panel">
-                <img src="image_16.png" alt="Processione San Giovanni Battista" onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80'">
+                <img src="san-giovanni.jpg" alt="Festa di San Giovanni Battista">
                 <div class="event-content">
                     <div class="event-date">22 - 24 Giugno</div>
                     <h3 class="event-title">Festa di San Giovanni Battista</h3>
@@ -286,7 +275,7 @@
                 </div>
             </div>
             <div class="event-card glass-panel">
-                <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80" alt="Festa della Madonna del Carmine">
+                <img src="carmine.jpg" alt="Festa della Madonna del Carmine">
                 <div class="event-content">
                     <div class="event-date">15 - 16 Luglio</div>
                     <h3 class="event-title">Festa della Madonna del Carmine</h3>
@@ -296,7 +285,7 @@
         </div>
     </section>
 
-    <!-- Sezione Esperienze (3 Colonne con immagini reali) -->
+    <!-- Sezione Esperienze (3 Colonne) -->
     <section id="attivita" class="section">
         <div class="glass-panel" style="padding: 60px 40px;">
             <h2 class="section-title">Esperienze Autentiche</h2>
@@ -304,20 +293,17 @@
             
             <div class="grid-3">
                 <div class="activity-card">
-                    <!-- Immagine Lungomare Aggiornata -->
-                    <img src="image_20.png" alt="Il Lungomare di San Lucido" onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80'">
+                    <img src="lungomare.jpg" alt="Il Lungomare di San Lucido">
                     <h3>Il Lungomare</h3>
                     <p>Chilometri di costa lambita da acque cristalline. Rilassati sui lidi o passeggia al tramonto sul nuovo lungomare panoramico.</p>
                 </div>
                 <div class="activity-card">
-                    <!-- Immagine Centro Storico Aggiornata -->
-                    <img src="image_12.png" alt="I Vicoli in Pietra di San Lucido" onerror="this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80'">
+                    <img src="centro-storico.jpg" alt="Centro Storico di San Lucido">
                     <h3>Centro Storico</h3>
                     <p>Esplora il dedalo di stradine antiche, tra portali in tufo e la celebre piazzetta che affaccia a strapiombo sul blu.</p>
                 </div>
                 <div class="activity-card">
-                    <!-- Immagine Lampadari Aggiornata -->
-                    <img src="image_9.png" alt="Via dei Lampadari Illuminata ad Agosto" onerror="this.src='https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&q=80'">
+                    <img src="luminarie.jpg" alt="Le Luminarie e Via dei Lampadari">
                     <h3>Le Luminarie</h3>
                     <p>Vivi la magia delle notti estive, quando le vie del centro storico si accendono illuminandosi come un salotto a cielo aperto.</p>
                 </div>
