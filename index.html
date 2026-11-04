@@ -24,7 +24,8 @@
         .btn-primary:hover { background-color: #6b573d; }
         
         .section { padding: 80px 50px; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; color: #ffffff; font-size: 2.5em; margin-bottom: 40px; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); }
+        .section-title { text-align: center; color: #ffffff; font-size: 2.5em; margin-bottom: 20px; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); }
+        .section-subtitle { text-align: center; color: #ffffff; font-size: 1.5em; margin-bottom: 40px; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-style: italic; }
         
         /* Griglia Case (2 Colonne) */
         .grid { display: flex; gap: 40px; justify-content: center; max-width: 900px; margin: 0 auto; }
@@ -34,161 +35,14 @@
         .card-content { padding: 20px; }
 
         /* Griglia Eventi (4 Colonne) */
-        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 60px; }
         .event-card { background: rgba(255,255,255,0.95); border: 1px solid var(--secondary); border-radius: 6px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s; text-align: center; display: flex; flex-direction: column; }
         .event-card:hover { transform: translateY(-5px); }
-        .event-card img { width: 100%; height: 180px; object-fit: cover; }
+        .event-card img { width: 100%; height: 160px; object-fit: cover; }
         .event-content { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
-        .event-date { color: var(--primary); font-weight: bold; font-size: 0.9em; margin-bottom: 5px; text-transform: uppercase; }
-        .event-title { font-size: 1.2em; margin: 0 0 10px 0; color: var(--text-dark); }
-        .event-desc { font-size: 0.9em; color: #555; flex-grow: 1; }
+        .event-date { color: var(--primary); font-weight: bold; font-size: 0.85em; margin-bottom: 5px; text-transform: uppercase; }
+        .event-title { font-size: 1.1em; margin: 0 0 10px 0; color: var(--text-dark); font-weight: bold;}
+        .event-desc { font-size: 0.85em; color: #444; flex-grow: 1; line-height: 1.4;}
         
         @media (max-width: 1024px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } .grid { flex-direction: column; align-items: center; } .card { width: 100%; } }
-        @media (max-width: 600px) { .grid-4 { grid-template-columns: 1fr; } nav { flex-direction: column; gap: 15px; } }
-        
-        #booking-section { background-color: rgba(255,255,255,0.95); padding: 40px; border-radius: 6px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); margin-top: 40px; max-width: 800px; margin: 40px auto 0; }
-        #booking-section h2 { color: var(--primary); text-shadow: none; text-align: center; margin-top: 0; }
-        input, select { width: 100%; padding: 12px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; font-family: inherit; background: #fff; }
-        footer { text-align: center; padding: 40px; background-color: rgba(255,255,255,0.95); border-top: 1px solid var(--secondary); margin-top: 50px; }
-    </style>
-</head>
-<body>
-    <div class="overlay">
-        <nav>
-            <h2>Capè Domus</h2>
-            <div>
-                <a href="#chi-siamo">Chi Siamo</a>
-                <a href="#case">Le Case</a>
-                <a href="#eventi">Tradizioni</a>
-                <a href="#booking-section">Prenota</a>
-            </div>
-        </nav>
-
-        <div class="hero">
-            <h1>Capè Domus</h1>
-            <p style="font-size: 1.5em; font-style: italic;">L'eleganza rustica a San Lucido, perla del Tirreno</p>
-        </div>
-
-        <div id="chi-siamo" class="section" style="text-align: center;">
-            <h2 class="section-title">Chi Siamo</h2>
-            <p style="font-size: 1.1em; color: #333; background: rgba(255,255,255,0.95); padding: 30px; border-radius: 6px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); max-width: 900px; margin: 0 auto;">Siamo un progetto nato dall'amore per l'ospitalità e per il nostro territorio. Capè Domus offre appartamenti boutique accuratamente restaurati, pensati per farvi vivere l'autenticità del sud Italia senza rinunciare ai comfort moderni.</p>
-        </div>
-
-        <div id="case" class="section">
-            <h2 class="section-title">Scegli la tua Dimora</h2>
-            <div class="grid">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Vista Mare">
-                    <div class="card-content">
-                        <h3 style="color: var(--primary); font-size: 1.8em; margin-top:0;">Casa Marina</h3>
-                        <p>Il respiro del mare direttamente alla tua finestra. Tonalità calde e design mediterraneo.</p>
-                        <a href="casa-marina.html" class="btn-primary" style="margin-top: 15px;">Scopri la Casa</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1516483638261-f4088921eeeb?auto=format&fit=crop&w=800&q=80" alt="Vista Borgo">
-                    <div class="card-content">
-                        <h3 style="color: var(--primary); font-size: 1.8em; margin-top:0;">Casa Paese</h3>
-                        <p>Immersa nel fascino del centro storico. Arredi su misura e un'atmosfera senza tempo.</p>
-                        <a href="casa-paese.html" class="btn-primary" style="margin-top: 15px;">Scopri la Casa</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sezione Sagre a 4 Colonne -->
-        <div id="eventi" class="section">
-            <h2 class="section-title">Sagre e Tradizioni Sanlucidane</h2>
-            <div class="grid-4">
-                
-                <div class="event-card">
-                    <img src="https://images.unsplash.com/photo-1533174000255-14f77d4c82c3?auto=format&fit=crop&w=600&q=80" alt="Carnevale Estivo">
-                    <div class="event-content">
-                        <div class="event-date">19 - 21 Luglio</div>
-                        <h3 class="event-title">Carnevale Estivo "'A Vulata"</h3>
-                        <p class="event-desc">L'evento più folcloristico dell'estate! Carri allegorici, maschere e il famoso bagno di gruppo "a mare" di tutti i cittadini e turisti.</p>
-                    </div>
-                </div>
-
-                <div class="event-card">
-                    <img src="https://images.unsplash.com/photo-1544378125-9626b9a8976b?auto=format&fit=crop&w=600&q=80" alt="San Giovanni Battista">
-                    <div class="event-content">
-                        <div class="event-date">24 Giugno</div>
-                        <h3 class="event-title">Festa di San Giovanni</h3>
-                        <p class="event-desc">Festa del Santo Patrono. Processioni emozionanti tra le vie del borgo, fiera locale e spettacolari fuochi d'artificio in notturna.</p>
-                    </div>
-                </div>
-
-                <div class="event-card">
-                    <img src="https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?auto=format&fit=crop&w=600&q=80" alt="Sagra delle Alici">
-                    <div class="event-content">
-                        <div class="event-date">Luglio / Agosto</div>
-                        <h3 class="event-title">Sagra delle Alici</h3>
-                        <p class="event-desc">L'appuntamento imperdibile per gli amanti del mare. Degustazione di alici fritte locali accompagnate dal vino del territorio e canti popolari.</p>
-                    </div>
-                </div>
-
-                <div class="event-card">
-                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" alt="Via dei Lampadari">
-                    <div class="event-content">
-                        <div class="event-date">1 - 31 Agosto</div>
-                        <h3 class="event-title">La Via dei Lampadari</h3>
-                        <p class="event-desc">Il centro storico di San Lucido si trasforma in un salotto a cielo aperto, interamente illuminato da preziosi lampadari di cristallo sospesi.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="section">
-            <div id="booking-section">
-                <h2>Richiedi il tuo Soggiorno</h2>
-                <form id="form-prenotazione">
-                    <label>Quale casa desideri?</label>
-                    <select id="casa_selezionata" required>
-                        <option value="" disabled selected>Seleziona un appartamento...</option>
-                        <option value="casa-marina">Casa Marina</option>
-                        <option value="casa-paese">Casa Paese</option>
-                    </select>
-
-                    <label>Nome e Cognome</label>
-                    <input type="text" id="nome" required>
-                    
-                    <label>Email</label>
-                    <input type="email" id="email" required>
-
-                    <div style="display: flex; gap: 15px;">
-                        <div style="width: 50%;"><label>Check-in</label><input type="date" id="check_in" required></div>
-                        <div style="width: 50%;"><label>Check-out</label><input type="date" id="check_out" required></div>
-                    </div>
-                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 15px;">Invia Richiesta</button>
-                </form>
-                <div id="messaggio-risposta" style="margin-top: 15px; text-align: center; font-weight: bold;"></div>
-            </div>
-        </div>
-
-        <footer>
-            <h3 style="color: var(--primary); margin: 0;">Capè Domus</h3>
-            <p>San Lucido, Calabria | Boutique Apartments</p>
-        </footer>
-    </div>
-    <script>
-        const API_BASE_URL = "https://capedomus-backend.vercel.app";
-        document.getElementById('form-prenotazione').addEventListener('submit', function(e) {
-            e.preventDefault(); 
-            const boxMessaggio = document.getElementById('messaggio-risposta');
-            boxMessaggio.innerText = "Invio in corso...";
-            const dati = {
-                casa: document.getElementById('casa_selezionata').value,
-                nome: document.getElementById('nome').value,
-                email: document.getElementById('email').value,
-                check_in: document.getElementById('check_in').value,
-                check_out: document.getElementById('check_out').value
-            };
-            fetch(`${API_BASE_URL}/api/richiesta/`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(dati) })
-            .then(r => r.json()).then(data => { boxMessaggio.innerText = "Richiesta inviata con successo!"; boxMessaggio.style.color = "green"; document.getElementById('form-prenotazione').reset(); })
-            .catch(e => { boxMessaggio.innerText = "Errore di connessione."; boxMessaggio.style.color = "red"; });
-        });
-    </script>
-</body>
-</html>
+        @media (max-width:
