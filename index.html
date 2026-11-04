@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visita San Lucido | Storia, Tradizioni e Mare</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome per l'icona di WhatsApp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root { 
             --primary-blue: #0a3d62; 
@@ -39,58 +42,98 @@
         /* Navbar */
         nav { 
             display: flex; justify-content: space-between; align-items: center; 
-            padding: 20px 50px; position: sticky; top: 10px; z-index: 100; 
-            margin: 0 20px;
+            padding: 15px 40px; position: sticky; top: 10px; z-index: 100; 
+            margin: 0 20px; flex-wrap: wrap; gap: 15px;
         }
-        nav h2 { margin: 0; letter-spacing: 2px; text-transform: uppercase; font-size: 1.5em; font-weight: 700; }
-        nav div { display: flex; gap: 25px; }
+        nav h2 { margin: 0; letter-spacing: 2px; text-transform: uppercase; font-size: 1.4em; font-weight: 700; }
+        .nav-links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
         nav a { 
             text-decoration: none; color: var(--primary-blue); font-weight: 600; 
-            text-transform: uppercase; font-size: 0.9em; letter-spacing: 1px; transition: 0.3s; 
+            text-transform: uppercase; font-size: 0.85em; letter-spacing: 1px; transition: 0.3s; 
         }
         nav a:hover { opacity: 0.7; }
+
+        /* Widget Traduzione Google personalizzato */
+        #google_translate_element { display: inline-block; }
+        .goog-te-combo {
+            padding: 6px 10px;
+            border-radius: 8px;
+            border: 1px solid var(--primary-blue);
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-blue);
+            font-family: 'Lora', serif;
+            font-size: 0.85em;
+            cursor: pointer;
+        }
+        /* Nasconde il banner fastidioso di Google Traduttore in alto */
+        .goog-te-banner-frame { display: none !important; }
+        body { top: 0 !important; }
         
         /* Hero */
         .hero { 
-            height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; 
+            height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; 
         }
         .hero h1 { 
-            font-size: 5em; margin-bottom: 10px; letter-spacing: 4px; text-transform: uppercase; 
+            font-size: 4.5em; margin-bottom: 10px; letter-spacing: 4px; text-transform: uppercase; 
             color: white; text-shadow: 0 4px 15px rgba(10, 61, 98, 0.6); 
         }
         .hero p { 
-            font-size: 1.6em; font-style: italic; color: white; text-shadow: 0 2px 10px rgba(10, 61, 98, 0.6); 
+            font-size: 1.5em; font-style: italic; color: white; text-shadow: 0 2px 10px rgba(10, 61, 98, 0.6); 
         }
         
         /* Sezioni Generiche */
-        .section { padding: 80px 40px; max-width: 1200px; margin: 40px auto; }
-        .section-title { text-align: center; font-size: 3.2em; margin-bottom: 20px; font-weight: 700; }
-        .section-subtitle { text-align: center; font-size: 1.2em; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto; font-weight: 600; }
+        .section { padding: 70px 30px; max-width: 1200px; margin: 30px auto; }
+        .section-title { text-align: center; font-size: 3em; margin-bottom: 20px; font-weight: 700; }
+        .section-subtitle { text-align: center; font-size: 1.15em; margin-bottom: 45px; max-width: 800px; margin-left: auto; margin-right: auto; font-weight: 600; }
         
         /* Layout Storia e Cilla */
         .history-layout { display: flex; gap: 40px; align-items: stretch; margin-top: 20px; }
-        .history-text { flex: 1; padding: 40px; font-size: 1.15em; font-weight: 500; text-align: justify; }
-        .history-text h3 { font-size: 1.8em; margin-top: 0; margin-bottom: 20px; }
-        .history-img { flex: 1; border-radius: 16px; overflow: hidden; }
+        .history-text { flex: 1; padding: 35px; font-size: 1.1em; font-weight: 500; text-align: justify; }
+        .history-text h3 { font-size: 1.7em; margin-top: 0; margin-bottom: 15px; }
+        .history-img { flex: 1; border-radius: 16px; overflow: hidden; min-height: 350px; }
         .history-img img { width: 100%; height: 100%; object-fit: cover; }
 
         /* Griglia 4 Colonne (Sagre) */
-        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
         .event-card { overflow: hidden; transition: transform 0.3s; display: flex; flex-direction: column; }
-        .event-card:hover { transform: translateY(-10px); }
-        .event-card img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--glass-border); }
-        .event-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-        .event-date { color: var(--primary-blue); font-weight: 700; font-size: 0.9em; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
-        .event-title { font-size: 1.4em; margin: 0 0 10px 0; font-weight: 700; }
-        .event-desc { font-size: 1em; font-weight: 500; flex-grow: 1; }
+        .event-card:hover { transform: translateY(-8px); }
+        .event-card img { width: 100%; height: 180px; object-fit: cover; border-bottom: 1px solid var(--glass-border); }
+        .event-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .event-date { color: var(--primary-blue); font-weight: 700; font-size: 0.85em; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+        .event-title { font-size: 1.3em; margin: 0 0 8px 0; font-weight: 700; }
+        .event-desc { font-size: 0.95em; font-weight: 500; flex-grow: 1; }
 
         /* Griglia 3 Colonne (Esperienze) */
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 40px; }
-        .activity-card { text-align: center; padding: 40px 20px; transition: 0.3s; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 30px; }
+        .activity-card { text-align: center; padding: 35px 20px; transition: 0.3s; }
         .activity-card:hover { transform: translateY(-5px); }
-        .activity-card img { width: 220px; height: 220px; object-fit: cover; border-radius: 50%; border: 6px solid rgba(255,255,255,0.8); box-shadow: 0 10px 25px rgba(10, 61, 98, 0.15); margin-bottom: 25px; }
-        .activity-card h3 { font-size: 1.6em; margin-bottom: 15px; }
-        .activity-card p { font-size: 1.05em; font-weight: 500; }
+        .activity-card img { width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 6px solid rgba(255,255,255,0.8); box-shadow: 0 10px 25px rgba(10, 61, 98, 0.15); margin-bottom: 20px; }
+        .activity-card h3 { font-size: 1.5em; margin-bottom: 12px; }
+        .activity-card p { font-size: 1em; font-weight: 500; }
+
+        /* Pulsante WhatsApp Fluttuante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
 
         /* Footer */
         footer { text-align: center; padding: 40px 20px; margin: 50px 20px 20px 20px; }
@@ -102,21 +145,29 @@
         }
         @media (max-width: 768px) { 
             .grid-4, .grid-3 { grid-template-columns: 1fr; } 
-            nav { flex-direction: column; gap: 15px; border-radius: 8px; } 
-            .hero h1 { font-size: 3.5em; }
+            nav { flex-direction: column; gap: 15px; border-radius: 12px; padding: 20px; } 
+            .hero h1 { font-size: 3em; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Navbar con Traduttore e Link -->
     <nav class="glass-panel">
         <h2>San Lucido</h2>
-        <div>
+        <div class="nav-links">
             <a href="#storia">Storia & Miti</a>
             <a href="#sagre">Tradizioni</a>
             <a href="#attivita">Esperienze</a>
+            <!-- Widget Google Translate -->
+            <div id="google_translate_element"></div>
         </div>
     </nav>
+
+    <!-- Pulsante WhatsApp Fluttuante (Sostituisci 393000000000 con il tuo numero reale con prefisso internazionale senza +) -->
+    <a href="https://wa.me/393000000000?text=Salve,%20vorrei%20maggiori%20informazioni%20su%20San%20Lucido" class="whatsapp-float" target="_blank" title="Contattaci su WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <header class="hero">
         <h1>San Lucido</h1>
@@ -138,7 +189,7 @@
                     <p>Si narra la triste storia di Cilla, una giovane e bellissima donna sanlucidana, e del suo amato pescatore Tutù. In un giorno di feroce tempesta, l'imbarcazione del giovane si rovesciò tra i flutti. Cilla, impazzita dal dolore e sperando di salvarlo o di unirsi a lui per l'eternità, si gettò nel mare in tempesta dalla rupe. Oggi la statua di Cilla scruta malinconica l'orizzonte dal belvedere, simbolo dell'amore incondizionato e del legame indissolubile tra il borgo e il suo mare.</p>
                 </div>
                 <div class="history-img">
-                    <img src="https://images.unsplash.com/photo-1518331647614-7a1f04cd34ce?auto=format&fit=crop&w=800&q=80" alt="Donna che guarda il mare - Leggenda di Cilla">
+                    <img src="Cilla_-_San_Lucido.jpg" alt="Statua della Leggenda di Cilla a San Lucido">
                 </div>
             </div>
         </div>
@@ -187,35 +238,4 @@
 
     <!-- Sezione Esperienze (3 Colonne) -->
     <section id="attivita" class="section">
-        <div class="glass-panel" style="padding: 60px 40px;">
-            <h2 class="section-title">Esperienze Autentiche</h2>
-            <p class="section-subtitle">Dalle passeggiate sul mare alle esplorazioni urbane, gli scenari indimenticabili di San Lucido.</p>
-            
-            <div class="grid-3">
-                <div class="activity-card">
-                    <img src="https://images.unsplash.com/photo-1505159940484-eb2b9f2588e2?auto=format&fit=crop&w=800&q=80" alt="Il Lungomare">
-                    <h3>Il Lungomare</h3>
-                    <p>Chilometri di costa lambita da acque cristalline. Rilassati sui lidi o passeggia al tramonto sul nuovo lungomare panoramico.</p>
-                </div>
-                <div class="activity-card">
-                    <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80" alt="Il Centro Storico">
-                    <h3>I Vicoli in Pietra</h3>
-                    <p>Esplora il dedalo di stradine antiche, tra portali in tufo e la celebre piazzetta che affaccia a strapiombo sul blu.</p>
-                </div>
-                <div class="activity-card">
-                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80" alt="Via dei Lampadari">
-                    <h3>Le Luminarie</h3>
-                    <p>Vivi la magia delle notti estive, quando le vie del centro storico si accendono illuminandosi come un salotto a cielo aperto.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="glass-panel">
-        <h3>Scopri San Lucido</h3>
-        <p>Promozione turistica, storia e bellezze del Tirreno cosentino.</p>
-        <p style="font-size: 0.8em; margin-top: 15px; opacity: 0.8;">© 2026 Borgo di San Lucido</p>
-    </footer>
-
-</body>
-</html>
+        <div class="glass-panel" style="padding: 60px
