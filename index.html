@@ -3,39 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capè Domus | Boutique Apartments</title>
+    <title>Capè Domus | Boutique Apartments San Lucido</title>
     <style>
         :root { --primary: #8b7355; --secondary: #eaddcf; --text-dark: #333333; }
-        /* Sfondo fisso su tutto il sito */
         body { 
             font-family: 'Georgia', serif; color: var(--text-dark); margin: 0; padding: 0; line-height: 1.6; scroll-behavior: smooth;
             background: url('https://images.unsplash.com/photo-1499678329028-101435549a4e?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed; 
             background-size: cover;
         }
-        /* Velo semi-trasparente per leggere i testi */
-        .overlay { background-color: rgba(252, 251, 249, 0.90); min-height: 100vh; }
+        .overlay { background-color: rgba(0, 0, 0, 0.35); min-height: 100vh; padding-bottom: 50px; }
         
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background-color: rgba(255,255,255,0.95); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--secondary); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background-color: rgba(255,255,255,0.95); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         nav h2 { margin: 0; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; font-size: 1.5em; }
         nav a { text-decoration: none; color: var(--text-dark); margin-left: 20px; font-weight: bold; }
         
-        .hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; }
-        .hero h1 { font-size: 3.5em; margin-bottom: 10px; letter-spacing: 3px; text-transform: uppercase; }
-        .btn-primary { padding: 15px 30px; background-color: var(--primary); color: white; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; display: inline-block; }
+        .hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; }
+        .hero h1 { font-size: 3.5em; margin-bottom: 10px; letter-spacing: 3px; text-transform: uppercase; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); }
+        .hero p { text-shadow: 2px 2px 5px rgba(0,0,0,0.8); }
+        .btn-primary { padding: 15px 30px; background-color: var(--primary); color: white; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; display: inline-block; font-weight: bold; }
         .btn-primary:hover { background-color: #6b573d; }
         
-        .section { padding: 80px 50px; max-width: 1000px; margin: 0 auto; }
-        .section-title { text-align: center; color: var(--primary); font-size: 2.5em; margin-bottom: 40px; }
+        .section { padding: 80px 50px; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; color: #ffffff; font-size: 2.5em; margin-bottom: 40px; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); }
         
-        .grid { display: flex; gap: 40px; justify-content: center; }
-        .card { background: rgba(255,255,255,0.95); width: 45%; border: 1px solid var(--secondary); box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; text-align: center; padding-bottom: 20px; }
+        /* Griglia Case (2 Colonne) */
+        .grid { display: flex; gap: 40px; justify-content: center; max-width: 900px; margin: 0 auto; }
+        .card { background: rgba(255,255,255,0.95); width: 45%; border: 1px solid var(--secondary); box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s; text-align: center; padding-bottom: 20px; border-radius: 6px; overflow: hidden; }
         .card:hover { transform: translateY(-5px); }
         .card img { width: 100%; height: 300px; object-fit: cover; }
         .card-content { padding: 20px; }
+
+        /* Griglia Eventi (4 Colonne) */
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .event-card { background: rgba(255,255,255,0.95); border: 1px solid var(--secondary); border-radius: 6px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s; text-align: center; display: flex; flex-direction: column; }
+        .event-card:hover { transform: translateY(-5px); }
+        .event-card img { width: 100%; height: 180px; object-fit: cover; }
+        .event-content { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
+        .event-date { color: var(--primary); font-weight: bold; font-size: 0.9em; margin-bottom: 5px; text-transform: uppercase; }
+        .event-title { font-size: 1.2em; margin: 0 0 10px 0; color: var(--text-dark); }
+        .event-desc { font-size: 0.9em; color: #555; flex-grow: 1; }
         
-        #booking-section { background-color: rgba(255,255,255,0.95); padding: 40px; border: 1px solid var(--secondary); margin-top: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        input, select { width: 100%; padding: 12px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; font-family: inherit; background: rgba(255,255,255,0.8); }
-        footer { text-align: center; padding: 40px; background-color: rgba(234, 221, 207, 0.95); }
+        @media (max-width: 1024px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } .grid { flex-direction: column; align-items: center; } .card { width: 100%; } }
+        @media (max-width: 600px) { .grid-4 { grid-template-columns: 1fr; } nav { flex-direction: column; gap: 15px; } }
+        
+        #booking-section { background-color: rgba(255,255,255,0.95); padding: 40px; border-radius: 6px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); margin-top: 40px; max-width: 800px; margin: 40px auto 0; }
+        #booking-section h2 { color: var(--primary); text-shadow: none; text-align: center; margin-top: 0; }
+        input, select { width: 100%; padding: 12px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; font-family: inherit; background: #fff; }
+        footer { text-align: center; padding: 40px; background-color: rgba(255,255,255,0.95); border-top: 1px solid var(--secondary); margin-top: 50px; }
     </style>
 </head>
 <body>
@@ -45,7 +59,7 @@
             <div>
                 <a href="#chi-siamo">Chi Siamo</a>
                 <a href="#case">Le Case</a>
-                <a href="eventi.html">Eventi</a>
+                <a href="#eventi">Tradizioni</a>
                 <a href="#booking-section">Prenota</a>
             </div>
         </nav>
@@ -57,7 +71,7 @@
 
         <div id="chi-siamo" class="section" style="text-align: center;">
             <h2 class="section-title">Chi Siamo</h2>
-            <p style="font-size: 1.1em; color: #333; background: rgba(255,255,255,0.8); padding: 30px; border-radius: 8px;">Siamo un progetto nato dall'amore per l'ospitalità e per il nostro territorio. Capè Domus offre appartamenti boutique accuratamente restaurati, pensati per farvi vivere l'autenticità del sud Italia senza rinunciare ai comfort moderni.</p>
+            <p style="font-size: 1.1em; color: #333; background: rgba(255,255,255,0.95); padding: 30px; border-radius: 6px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); max-width: 900px; margin: 0 auto;">Siamo un progetto nato dall'amore per l'ospitalità e per il nostro territorio. Capè Domus offre appartamenti boutique accuratamente restaurati, pensati per farvi vivere l'autenticità del sud Italia senza rinunciare ai comfort moderni.</p>
         </div>
 
         <div id="case" class="section">
@@ -66,10 +80,115 @@
                 <div class="card">
                     <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Vista Mare">
                     <div class="card-content">
-                        <h3 style="color: var(--primary); font-size: 1.8em;">Casa Marina</h3>
+                        <h3 style="color: var(--primary); font-size: 1.8em; margin-top:0;">Casa Marina</h3>
                         <p>Il respiro del mare direttamente alla tua finestra. Tonalità calde e design mediterraneo.</p>
                         <a href="casa-marina.html" class="btn-primary" style="margin-top: 15px;">Scopri la Casa</a>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4088921eeeb?auto=format&fit=crop&w=800&q=80" alt="Vista Borgo">
+                    <div class="card-content">
+                        <h3 style="color: var(--primary); font-size: 1.8em; margin-top:0;">Casa Paese</h3>
+                        <p>Immersa nel fascino del centro storico. Arredi su misura e un'atmosfera senza tempo.</p>
+                        <a href="casa-paese.html" class="btn-primary" style="margin-top: 15px;">Scopri la Casa</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sezione Sagre a 4 Colonne -->
+        <div id="eventi" class="section">
+            <h2 class="section-title">Sagre e Tradizioni Sanlucidane</h2>
+            <div class="grid-4">
+                
+                <div class="event-card">
+                    <img src="https://images.unsplash.com/photo-1533174000255-14f77d4c82c3?auto=format&fit=crop&w=600&q=80" alt="Carnevale Estivo">
+                    <div class="event-content">
+                        <div class="event-date">19 - 21 Luglio</div>
+                        <h3 class="event-title">Carnevale Estivo "'A Vulata"</h3>
+                        <p class="event-desc">L'evento più folcloristico dell'estate! Carri allegorici, maschere e il famoso bagno di gruppo "a mare" di tutti i cittadini e turisti.</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <img src="https://images.unsplash.com/photo-1544378125-9626b9a8976b?auto=format&fit=crop&w=600&q=80" alt="San Giovanni Battista">
+                    <div class="event-content">
+                        <div class="event-date">24 Giugno</div>
+                        <h3 class="event-title">Festa di San Giovanni</h3>
+                        <p class="event-desc">Festa del Santo Patrono. Processioni emozionanti tra le vie del borgo, fiera locale e spettacolari fuochi d'artificio in notturna.</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <img src="https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?auto=format&fit=crop&w=600&q=80" alt="Sagra delle Alici">
+                    <div class="event-content">
+                        <div class="event-date">Luglio / Agosto</div>
+                        <h3 class="event-title">Sagra delle Alici</h3>
+                        <p class="event-desc">L'appuntamento imperdibile per gli amanti del mare. Degustazione di alici fritte locali accompagnate dal vino del territorio e canti popolari.</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" alt="Via dei Lampadari">
+                    <div class="event-content">
+                        <div class="event-date">1 - 31 Agosto</div>
+                        <h3 class="event-title">La Via dei Lampadari</h3>
+                        <p class="event-desc">Il centro storico di San Lucido si trasforma in un salotto a cielo aperto, interamente illuminato da preziosi lampadari di cristallo sospesi.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div id="booking-section">
+                <h2>Richiedi il tuo Soggiorno</h2>
+                <form id="form-prenotazione">
+                    <label>Quale casa desideri?</label>
+                    <select id="casa_selezionata" required>
+                        <option value="" disabled selected>Seleziona un appartamento...</option>
+                        <option value="casa-marina">Casa Marina</option>
+                        <option value="casa-paese">Casa Paese</option>
+                    </select>
+
+                    <label>Nome e Cognome</label>
+                    <input type="text" id="nome" required>
+                    
+                    <label>Email</label>
+                    <input type="email" id="email" required>
+
+                    <div style="display: flex; gap: 15px;">
+                        <div style="width: 50%;"><label>Check-in</label><input type="date" id="check_in" required></div>
+                        <div style="width: 50%;"><label>Check-out</label><input type="date" id="check_out" required></div>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 15px;">Invia Richiesta</button>
+                </form>
+                <div id="messaggio-risposta" style="margin-top: 15px; text-align: center; font-weight: bold;"></div>
+            </div>
+        </div>
+
+        <footer>
+            <h3 style="color: var(--primary); margin: 0;">Capè Domus</h3>
+            <p>San Lucido, Calabria | Boutique Apartments</p>
+        </footer>
+    </div>
+    <script>
+        const API_BASE_URL = "https://capedomus-backend.vercel.app";
+        document.getElementById('form-prenotazione').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            const boxMessaggio = document.getElementById('messaggio-risposta');
+            boxMessaggio.innerText = "Invio in corso...";
+            const dati = {
+                casa: document.getElementById('casa_selezionata').value,
+                nome: document.getElementById('nome').value,
+                email: document.getElementById('email').value,
+                check_in: document.getElementById('check_in').value,
+                check_out: document.getElementById('check_out').value
+            };
+            fetch(`${API_BASE_URL}/api/richiesta/`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(dati) })
+            .then(r => r.json()).then(data => { boxMessaggio.innerText = "Richiesta inviata con successo!"; boxMessaggio.style.color = "green"; document.getElementById('form-prenotazione').reset(); })
+            .catch(e => { boxMessaggio.innerText = "Errore di connessione."; boxMessaggio.style.color = "red"; });
+        });
+    </script>
+</body>
+</html>
