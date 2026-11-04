@@ -3,166 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capè Domus | Boutique Apartments San Lucido</title>
+    <title>Visita San Lucido | Storia, Tradizioni e Mare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #8b7355; --secondary: #eaddcf; --text-dark: #333333; }
+        :root { 
+            --primary-blue: #0a3d62; 
+            --text-blue: #1e3799; 
+            --glass-bg: rgba(255, 255, 255, 0.65); 
+            --glass-border: rgba(255, 255, 255, 0.6);
+        }
+        
         body { 
-            font-family: 'Georgia', serif; color: var(--text-dark); margin: 0; padding: 0; line-height: 1.6; scroll-behavior: smooth;
-            background: url('https://images.unsplash.com/photo-1499678329028-101435549a4e?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed; 
+            font-family: 'Lora', serif; 
+            color: var(--text-blue); 
+            margin: 0; padding: 0; line-height: 1.7; scroll-behavior: smooth;
+            background: url('https://images.unsplash.com/photo-1499678329028-101435549a4e?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed; 
             background-size: cover;
         }
-        .overlay { background-color: rgba(0, 0, 0, 0.35); min-height: 100vh; padding-bottom: 50px; }
-        
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background-color: rgba(255,255,255,0.95); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        nav h2 { margin: 0; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; font-size: 1.5em; }
-        nav a { text-decoration: none; color: var(--text-dark); margin-left: 20px; font-weight: bold; }
-        
-        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; }
-        .hero h1 { font-size: 4em; margin-bottom: 10px; letter-spacing: 3px; text-transform: uppercase; text-shadow: 2px 2px 8px rgba(0,0,0,0.9); }
-        .hero p { font-size: 1.5em; font-style: italic; text-shadow: 2px 2px 8px rgba(0,0,0,0.9); }
-        
-        .btn-primary { padding: 15px 30px; background-color: var(--primary); color: white; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; display: inline-block; font-weight: bold; border-radius: 4px; }
-        .btn-primary:hover { background-color: #6b573d; }
-        
-        .section { padding: 80px 50px; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; color: #ffffff; font-size: 2.8em; margin-bottom: 20px; text-shadow: 2px 2px 8px rgba(0,0,0,0.9); }
-        .section-subtitle { text-align: center; color: #ffffff; font-size: 1.5em; margin-bottom: 40px; text-shadow: 2px 2px 8px rgba(0,0,0,0.9); font-style: italic; }
-        
-        .grid { display: flex; gap: 40px; justify-content: center; max-width: 900px; margin: 0 auto; }
-        .card { background: rgba(255,255,255,0.95); width: 45%; border: 1px solid var(--secondary); box-shadow: 0 5px 20px rgba(0,0,0,0.4); transition: 0.3s; text-align: center; padding-bottom: 20px; border-radius: 8px; overflow: hidden; }
-        .card:hover { transform: translateY(-5px); }
-        .card img { width: 100%; height: 300px; object-fit: cover; }
-        .card-content { padding: 20px; }
 
-        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 60px; }
-        .event-card { background: rgba(255,255,255,0.95); border: 1px solid var(--secondary); border-radius: 8px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.4); transition: 0.3s; text-align: center; display: flex; flex-direction: column; }
-        .event-card:hover { transform: translateY(-5px); }
-        .event-card img { width: 100%; height: 160px; object-fit: cover; }
-        .event-content { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
-        .event-date { color: var(--primary); font-weight: bold; font-size: 0.85em; margin-bottom: 5px; text-transform: uppercase; }
-        .event-title { font-size: 1.1em; margin: 0 0 10px 0; color: var(--text-dark); font-weight: bold;}
-        .event-desc { font-size: 0.85em; color: #444; flex-grow: 1; line-height: 1.4;}
+        h1, h2, h3, h4, nav h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-blue);
+        }
         
-        @media (max-width: 1024px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } .grid { flex-direction: column; align-items: center; } .card { width: 100%; } }
-        @media (max-width: 600px) { .grid-4 { grid-template-columns: 1fr; } nav { flex-direction: column; gap: 15px; } }
+        /* Effetto Vetro Generico */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(10, 61, 98, 0.15);
+            border-radius: 16px;
+        }
+
+        /* Navbar */
+        nav { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 20px 50px; position: sticky; top: 10px; z-index: 100; 
+            margin: 0 20px;
+        }
+        nav h2 { margin: 0; letter-spacing: 2px; text-transform: uppercase; font-size: 1.5em; font-weight: 700; }
+        nav div { display: flex; gap: 25px; }
+        nav a { 
+            text-decoration: none; color: var(--primary-blue); font-weight: 600; 
+            text-transform: uppercase; font-size: 0.9em; letter-spacing: 1px; transition: 0.3s; 
+        }
+        nav a:hover { opacity: 0.7; }
         
-        #booking-section { background-color: rgba(255,255,255,0.95); padding: 40px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.4); margin-top: 40px; max-width: 800px; margin: 40px auto 0; }
-        #booking-section h2 { color: var(--primary); text-shadow: none; text-align: center; margin-top: 0; font-size: 2.2em; }
-        input, select { width: 100%; padding: 12px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; font-family: inherit; background: #fff; border-radius: 4px; }
-        footer { text-align: center; padding: 40px; background-color: rgba(255,255,255,0.95); border-top: 1px solid var(--secondary); margin-top: 50px; }
+        /* Hero */
+        .hero { 
+            height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; 
+        }
+        .hero h1 { 
+            font-size: 5em; margin-bottom: 10px; letter-spacing: 4px; text-transform: uppercase; 
+            color: white; text-shadow: 0 4px 15px rgba(10, 61, 98, 0.6); 
+        }
+        .hero p { 
+            font-size: 1.6em; font-style: italic; color: white; text-shadow: 0 2px 10px rgba(10, 61, 98, 0.6); 
+        }
+        
+        /* Sezioni Generiche */
+        .section { padding: 80px 40px; max-width: 1200px; margin: 40px auto; }
+        .section-title { text-align: center; font-size: 3.2em; margin-bottom: 20px; font-weight: 700; }
+        .section-subtitle { text-align: center; font-size: 1.2em; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto; font-weight: 600; }
+        
+        /* Layout Storia e Cilla */
+        .history-layout { display: flex; gap: 40px; align-items: stretch; margin-top: 20px; }
+        .history-text { flex: 1; padding: 40px; font-size: 1.15em; font-weight: 500; text-align: justify; }
+        .history-text h3 { font-size: 1.8em; margin-top: 0; margin-bottom: 20px; }
+        .history-img { flex: 1; border-radius: 16px; overflow: hidden; }
+        .history-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Griglia 4 Colonne (Sagre) */
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+        .event-card { overflow: hidden; transition: transform 0.3s; display: flex; flex-direction: column; }
+        .event-card:hover { transform: translateY(-10px); }
+        .event-card img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--glass-border); }
+        .event-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .event-date { color: var(--primary-blue); font-weight: 700; font-size: 0.9em; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .event-title { font-size: 1.4em; margin: 0 0 10px 0; font-weight: 700; }
+        .event-desc { font-size: 1em; font-weight: 500; flex-grow: 1; }
+
+        /* Griglia 3 Colonne (Esperienze) */
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 40px; }
+        .activity-card { text-align: center; padding: 40px 20px; transition: 0.3s; }
+        .activity-card:hover { transform: translateY(-5px); }
+        .activity-card img { width: 220px; height: 220px; object-fit: cover; border-radius: 50%; border: 6px solid rgba(255,255,255,0.8); box-shadow: 0 10px 25px rgba(10, 61, 98, 0.15); margin-bottom: 25px; }
+        .activity-card h3 { font-size: 1.6em; margin-bottom: 15px; }
+        .activity-card p { font-size: 1.05em; font-weight: 500; }
+
+        /* Footer */
+        footer { text-align: center; padding: 40px 20px; margin: 50px 20px 20px 20px; }
+        footer h3 { letter-spacing: 2px; margin-bottom: 10px; font-size: 1.8em; }
+        
+        @media (max-width: 1024px) { 
+            .grid-4, .grid-3 { grid-template-columns: repeat(2, 1fr); } 
+            .history-layout { flex-direction: column; }
+        }
+        @media (max-width: 768px) { 
+            .grid-4, .grid-3 { grid-template-columns: 1fr; } 
+            nav { flex-direction: column; gap: 15px; border-radius: 8px; } 
+            .hero h1 { font-size: 3.5em; }
+        }
     </style>
 </head>
 <body>
-    <div class="overlay">
-        <nav>
-            <h2>Capè Domus</h2>
-            <div>
-                <a href="#chi-siamo">Chi Siamo</a>
-                <a href="#case">Le Case</a>
-                <a href="#eventi">Tradizioni & Sagre</a>
-                <a href="#booking-section">Prenota</a>
-            </div>
-        </nav>
 
-        <div class="hero">
-            <h1>Capè Domus</h1>
-            <p>L'eleganza rustica a San Lucido, perla del Tirreno</p>
+    <nav class="glass-panel">
+        <h2>San Lucido</h2>
+        <div>
+            <a href="#storia">Storia & Miti</a>
+            <a href="#sagre">Tradizioni</a>
+            <a href="#attivita">Esperienze</a>
         </div>
+    </nav>
 
-        <div id="chi-siamo" class="section" style="text-align: center;">
-            <h2 class="section-title">Chi Siamo</h2>
-            <p style="font-size: 1.1em; color: #333; background: rgba(255,255,255,0.95); padding: 30px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.4); max-width: 900px; margin: 0 auto; line-height: 1.8;">Siamo un progetto nato dall'amore per l'ospitalità e per il nostro territorio. Capè Domus offre appartamenti boutique accuratamente restaurati, pensati per farvi vivere l'autenticità del sud Italia senza rinunciare ai comfort moderni. Un rifugio elegante dove il mare e la storia si incontrano.</p>
-        </div>
+    <header class="hero">
+        <h1>San Lucido</h1>
+        <p>Un viaggio tra mare, storia e leggende autentiche</p>
+    </header>
 
-        <div id="case" class="section">
-            <h2 class="section-title">Scegli la tua Dimora</h2>
-            <div class="grid">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Vista Mare">
-                    <div class="card-content">
-                        <h3 style="color: var(--primary); font-size: 1.8em; margin-top:0;">Casa Marina</h3>
-                        <p>Il respiro del mare direttamente alla tua finestra. Tonalità calde e design mediterraneo.</p>
-                        <a href="casa-marina.html" class="btn-primary" style="margin-top: 15px;">Scopri la Casa</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1516483638261-f4088921eeeb?auto=format&fit=crop&w=800&q=80" alt="Vista Borgo">
-                    <div class="card-content">
-                        <h3 style="color: var(--primary); font-size: 1.8em; margin-top:0;">Casa Paese</h3>
-                        <p>Immersa nel fascino del centro storico. Arredi su misura e un'atmosfera senza tempo.</p>
-                        <a href="casa-paese.html" class="btn-primary" style="margin-top: 15px;">Scopri la Casa</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="eventi" class="section">
-            <h2 class="section-title">Vivi il Territorio</h2>
+    <!-- Sezione Storia e Leggenda di Cilla -->
+    <section id="storia" class="section">
+        <div class="glass-panel" style="padding: 40px;">
+            <h2 class="section-title">Le Nostre Radici</h2>
+            <p class="section-subtitle">Un borgo incastonato sulla costa tirrenica, dove ogni vicolo racconta memorie di invasioni, amore e salsedine.</p>
             
-            <h3 class="section-subtitle">Gli Appuntamenti a San Lucido</h3>
-            <div class="grid-4">
-                <div class="event-card">
-                    <img src="https://images.unsplash.com/photo-1544378125-9626b9a8976b?auto=format&fit=crop&w=600&q=80" alt="San Giovanni Battista">
-                    <div class="event-content">
-                        <div class="event-date">15 - 24 Giugno</div>
-                        <h3 class="event-title">Festa di San Giovanni</h3>
-                        <p class="event-desc">Festa del Patrono. Spettacolare processione a mare il 22 giugno e fiaccolata nel centro storico il 24 giugno.</p>
-                    </div>
+            <div class="history-layout">
+                <div class="history-text glass-panel">
+                    <h3>Dal Castello Ruffo al Mare</h3>
+                    <p>Le origini di San Lucido si perdono nell'epoca magno-greca. Il borgo ha vissuto il suo massimo splendore nel Medioevo, dominando la costa dall'alto della sua roccia calcarea. Segnato dalle incursioni saracene e dominato dalle imponenti rovine del Castello Ruffo, il centro storico è oggi un dedalo affascinante di vicoli e piazze panoramiche.</p>
+                    
+                    <h3 style="margin-top: 30px;">La Leggenda di Cilla</h3>
+                    <p>Si narra la triste storia di Cilla, una giovane e bellissima donna sanlucidana, e del suo amato pescatore Tutù. In un giorno di feroce tempesta, l'imbarcazione del giovane si rovesciò tra i flutti. Cilla, impazzita dal dolore e sperando di salvarlo o di unirsi a lui per l'eternità, si gettò nel mare in tempesta dalla rupe. Oggi la statua di Cilla scruta malinconica l'orizzonte dal belvedere, simbolo dell'amore incondizionato e del legame indissolubile tra il borgo e il suo mare.</p>
                 </div>
-                <div class="event-card">
-                    <img src="https://images.unsplash.com/photo-1533174000255-14f77d4c82c3?auto=format&fit=crop&w=600&q=80" alt="Carnevale Estivo">
-                    <div class="event-content">
-                        <div class="event-date">Metà Luglio (19 - 21)</div>
-                        <h3 class="event-title">Carnevale Estivo "'A Vulata"</h3>
-                        <p class="event-desc">Goliardico tuffo collettivo in mare vestiti per rievocare la cacciata dei saraceni, seguito da carri allegorici.</p>
-                    </div>
-                </div>
-                <div class="event-card">
-                    <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=600&q=80" alt="Sagra Sapori">
-                    <div class="event-content">
-                        <div class="event-date">Ultimo Weekend di Luglio</div>
-                        <h3 class="event-title">Sagra dei Nostri Sapori</h3>
-                        <p class="event-desc">In Contrada Cerasuolo: stand enogastronomici con pasta alla cerasuolana e cuddruriaddri.</p>
-                    </div>
-                </div>
-                <div class="event-card">
-                    <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=600&q=80" alt="Wine Festival">
-                    <div class="event-content">
-                        <div class="event-date">1 e 2 Agosto</div>
-                        <h3 class="event-title">San Lucido Wine Festival</h3>
-                        <p class="event-desc">Banchi di degustazione vinicola diffusi in tutto il fascino del centro storico fino a notte fonda.</p>
-                    </div>
-                </div>
-                <div class="event-card">
-                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80" alt="Cultura Mediterranea">
-                    <div class="event-content">
-                        <div class="event-date">23 - 30 Agosto</div>
-                        <h3 class="event-title">Festival Cultura Mediterranea</h3>
-                        <p class="event-desc">Rassegna estiva con incontri culturali, gran galà lirico e spettacoli serali nel suggestivo chiostro comunale.</p>
-                    </div>
-                </div>
-                <div class="event-card">
-                    <img src="https://images.unsplash.com/photo-1519671282429-b44660ead0a7?auto=format&fit=crop&w=600&q=80" alt="San Leonardo">
-                    <div class="event-content">
-                        <div class="event-date">6 e 7 Novembre</div>
-                        <h3 class="event-title">Festa di San Leonardo</h3>
-                        <p class="event-desc">Storica fiera mercato sul lungomare, arricchita negli ultimi anni dai sapori della Festa del Baccalà.</p>
-                    </div>
+                <div class="history-img">
+                    <img src="https://images.unsplash.com/photo-1518331647614-7a1f04cd34ce?auto=format&fit=crop&w=800&q=80" alt="Donna che guarda il mare - Leggenda di Cilla">
                 </div>
             </div>
+        </div>
+    </section>
 
-            <h3 class="section-subtitle">Gli Eventi nei Dintorni</h3>
-            <div class="grid-4">
-                <div class="event-card">
-                    <img src="https://images.unsplash.com/photo-1588066077864-1628d0b2848b?auto=format&fit=crop&w=600&q=80" alt="Peperoncino">
-                    <div class="event-content">
-                        <div class="event-date">Seconda Settimana di Sett.</div>
-                        <h3 class="event-title">Festival del Peperoncino</h3>
-                        <p class="event-desc">A Diamante (CS). L'evento piccante più celebre d'Italia, tra arte, gastronomia e spettacoli sul mare.</p>
-                    </div>
+    <!-- Sezione Sagre (4 Colonne) -->
+    <section id="sagre" class="section">
+        <h2 class="section-title" style="color: white; text-shadow: 0 2px 10px rgba(10,61,98,0.5);">Vivi le Tradizioni</h2>
+        <p class="section-subtitle" style="color: white; text-shadow: 0 2px 10px rgba(10,61,98,0.5);">Un calendario di eventi folcloristici ed enogastronomici che animano il borgo.</p>
+        
+        <div class="grid-4">
+            <div class="event-card glass-panel">
+                <img src="https://images.unsplash.com/photo-1544378125-9626b9a8976b?auto=format&fit=crop&w=600&q=80" alt="San Giovanni Battista">
+                <div class="event-content">
+                    <div class="event-date">15 - 24 Giugno</div>
+                    <h3 class="event-title">Festa di San Giovanni</h3>
+                    <p class="event-desc">Celebrazioni per il Santo Patrono. Processione suggestiva a mare il 22 giugno e fiaccolata tra i vicoli il 24 giugno.</p>
                 </div>
-                <div class="event-card">
-                    <img src="https://images.unsplash.com/photo-1548625361-ec8f38ba9ea0?auto=format&fit=crop&w=600&q=80" alt="San Michele">
-                    <div class="event-content">
-                        <div class="event-date">29 Settembre</div>
-                        <h3 class="event-title
+            </div>
+            <div class="event-card glass-panel">
+                <img src="https://images.unsplash.com/photo-1533174000255-14f77d4c82c3?auto=format&fit=crop&w=600&q=80" alt="Carnevale Estivo">
+                <div class="event-content">
+                    <div class="event-date">19 - 21 Luglio</div>
+                    <h3 class="event-title">Carnevale "'A Vulata"</h3>
+                    <p class="event-desc">Goliardico tuffo collettivo vestiti in mare per rievocare la cacciata dei saraceni, seguito da carri allegorici.</p>
+                </div>
+            </div>
+            <div class="event-card glass-panel">
+                <img src="wine-festival.jpeg" alt="Wine Festival">
+                <div class="event-content">
+                    <div class="event-date">1 e 2 Agosto</div>
+                    <h3 class="event-title">San Lucido Wine Festival</h3>
+                    <p class="event-desc">Banchi di degustazione vinicola diffusi nel cuore del centro storico fino a notte fonda. Vino, cultura e bellezza.</p>
+                </div>
+            </div>
+            <div class="event-card glass-panel">
+                <img src="san-leonardo.webp" alt="San Leonardo">
+                <div class="event-content">
+                    <div class="event-date">6 e 7 Novembre</div>
+                    <h3 class="event-title">Festa di San Leonardo</h3>
+                    <p class="event-desc">Antica fiera mercato sul lungomare, arricchita dalle specialità culinarie tipiche della Festa del Baccalà.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Esperienze (3 Colonne) -->
+    <section id="attivita" class="section">
+        <div class="glass-panel" style="padding: 60px 40px;">
+            <h2 class="section-title">Esperienze Autentiche</h2>
+            <p class="section-subtitle">Dalle passeggiate sul mare alle esplorazioni urbane, gli scenari indimenticabili di San Lucido.</p>
+            
+            <div class="grid-3">
+                <div class="activity-card">
+                    <img src="https://images.unsplash.com/photo-1505159940484-eb2b9f2588e2?auto=format&fit=crop&w=800&q=80" alt="Il Lungomare">
+                    <h3>Il Lungomare</h3>
+                    <p>Chilometri di costa lambita da acque cristalline. Rilassati sui lidi o passeggia al tramonto sul nuovo lungomare panoramico.</p>
+                </div>
+                <div class="activity-card">
+                    <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80" alt="Il Centro Storico">
+                    <h3>I Vicoli in Pietra</h3>
+                    <p>Esplora il dedalo di stradine antiche, tra portali in tufo e la celebre piazzetta che affaccia a strapiombo sul blu.</p>
+                </div>
+                <div class="activity-card">
+                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80" alt="Via dei Lampadari">
+                    <h3>Le Luminarie</h3>
+                    <p>Vivi la magia delle notti estive, quando le vie del centro storico si accendono illuminandosi come un salotto a cielo aperto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="glass-panel">
+        <h3>Scopri San Lucido</h3>
+        <p>Promozione turistica, storia e bellezze del Tirreno cosentino.</p>
+        <p style="font-size: 0.8em; margin-top: 15px; opacity: 0.8;">© 2026 Borgo di San Lucido</p>
+    </footer>
+
+</body>
+</html>
