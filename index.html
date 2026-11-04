@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visita San Lucido | Storia, Tradizioni e Mare</title>
+    <title>Capè Domus | Visita San Lucido</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <!-- FontAwesome per l'icona di WhatsApp -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,7 +24,7 @@
             background-size: cover;
         }
 
-        h1, h2, h3, h4, nav h2 {
+        h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             color: var(--primary-blue);
         }
@@ -39,13 +39,41 @@
             border-radius: 16px;
         }
 
-        /* Navbar */
+        /* Navbar con Logo e Colonne */
         nav { 
             display: flex; justify-content: space-between; align-items: center; 
             padding: 15px 40px; position: sticky; top: 10px; z-index: 100; 
             margin: 0 20px; flex-wrap: wrap; gap: 15px;
         }
-        nav h2 { margin: 0; letter-spacing: 2px; text-transform: uppercase; font-size: 1.4em; font-weight: 700; }
+        
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .brand-logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .column-icon {
+            height: 35px;
+            width: auto;
+            opacity: 0.85;
+        }
+
+        .brand-title-wrapper h2 { 
+            margin: 0; letter-spacing: 2px; text-transform: uppercase; font-size: 1.3em; font-weight: 700; white-space: nowrap;
+        }
+
         .nav-links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
         nav a { 
             text-decoration: none; color: var(--primary-blue); font-weight: 600; 
@@ -53,7 +81,7 @@
         }
         nav a:hover { opacity: 0.7; }
 
-        /* Widget Traduzione Google personalizzato */
+        /* Widget Traduzione Google */
         #google_translate_element { display: inline-block; }
         .goog-te-combo {
             padding: 6px 10px;
@@ -65,7 +93,6 @@
             font-size: 0.85em;
             cursor: pointer;
         }
-        /* Nasconde il banner fastidioso di Google Traduttore in alto */
         .goog-te-banner-frame { display: none !important; }
         body { top: 0 !important; }
         
@@ -147,13 +174,22 @@
             .grid-4, .grid-3 { grid-template-columns: 1fr; } 
             nav { flex-direction: column; gap: 15px; border-radius: 12px; padding: 20px; } 
             .hero h1 { font-size: 3em; }
+            .brand-container { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <!-- Navbar con Traduttore e Link -->
+
+    <!-- Navbar con Logo e Colonne ai lati del nome -->
     <nav class="glass-panel">
-        <h2>San Lucido</h2>
+        <div class="brand-container">
+            <img src="logo.png" alt="Logo Capè Domus" class="brand-logo">
+            <div class="brand-title-wrapper">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230a3d62'><path d='M3 21h18v-2H3v2zm2-4h14V5H5v12z'/></svg>" class="column-icon" alt="Colonna Sinistra">
+                <h2>Capè Domus</h2>
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230a3d62'><path d='M3 21h18v-2H3v2zm2-4h14V5H5v12z'/></svg>" class="column-icon" alt="Colonna Destra">
+            </div>
+        </div>
         <div class="nav-links">
             <a href="#storia">Storia & Miti</a>
             <a href="#sagre">Tradizioni</a>
@@ -164,7 +200,7 @@
     </nav>
 
     <!-- Pulsante WhatsApp Fluttuante -->
-    <a href="https://wa.me/393401170305?text=Salve,%20vorrei%20maggiori%20informazioni%20su%20San%20Lucido" class="whatsapp-float" target="_blank" title="Contattaci su WhatsApp">
+    <a href="https://wa.me/393000000000?text=Salve,%20vorrei%20maggiori%20informazioni%20su%20San%20Lucido" class="whatsapp-float" target="_blank" title="Contattaci su WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -237,4 +273,43 @@
 
     <!-- Sezione Esperienze (3 Colonne) -->
     <section id="attivita" class="section">
-        <div class="glass-panel" style="padding: 60px
+        <div class="glass-panel" style="padding: 60px 40px;">
+            <h2 class="section-title">Esperienze Autentiche</h2>
+            <p class="section-subtitle">Dalle passeggiate sul mare alle esplorazioni urbane, gli scenari indimenticabili di San Lucido.</p>
+            
+            <div class="grid-3">
+                <div class="activity-card">
+                    <img src="https://images.unsplash.com/photo-1505159940484-eb2b9f2588e2?auto=format&fit=crop&w=800&q=80" alt="Il Lungomare">
+                    <h3>Il Lungomare</h3>
+                    <p>Chilometri di costa lambita da acque cristalline. Rilassati sui lidi o passeggia al tramonto sul nuovo lungomare panoramico.</p>
+                </div>
+                <div class="activity-card">
+                    <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80" alt="Il Centro Storico">
+                    <h3>I Vicoli in Pietra</h3>
+                    <p>Esplora il dedalo di stradine antiche, tra portali in tufo e la celebre piazzetta che affaccia a strapiombo sul blu.</p>
+                </div>
+                <div class="activity-card">
+                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80" alt="Via dei Lampadari">
+                    <h3>Le Luminarie</h3>
+                    <p>Vivi la magia delle notti estive, quando le vie del centro storico si accendono illuminandosi come un salotto a cielo aperto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="glass-panel">
+        <h3>Capè Domus</h3>
+        <p>Promozione turistica, storia e bellezze del Tirreno cosentino.</p>
+        <p style="font-size: 0.8em; margin-top: 15px; opacity: 0.8;">© 2026 Borgo di San Lucido</p>
+    </footer>
+
+    <!-- Script per attivare Google Traduttore -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'it', includedLanguages: 'en,fr,de,es,it', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
