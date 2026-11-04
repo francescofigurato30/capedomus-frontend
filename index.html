@@ -19,8 +19,9 @@
             font-family: 'Lora', serif; 
             color: var(--text-blue); 
             margin: 0; padding: 0; line-height: 1.7; scroll-behavior: smooth;
-            background: linear-gradient(135deg, #0a3d62 0%, #1e3799 100%);
-            background-attachment: fixed;
+            /* Immagine di sfondo del belvedere ripristinata con sfumatura elegante */
+            background: linear-gradient(rgba(10, 61, 98, 0.4), rgba(10, 61, 98, 0.4)), url('belvedere.jpg') no-repeat center center fixed; 
+            background-size: cover;
             min-height: 100vh;
         }
 
@@ -138,8 +139,8 @@
         }
         .whatsapp-float:hover { transform: scale(1.1); }
 
-        footer { text-align: center; padding: 40px 20px; margin: 50px 20px 20px 20px; color: white; }
-        footer h3 { letter-spacing: 2px; margin-bottom: 10px; font-size: 1.6em; color: white; }
+        footer { text-align: center; padding: 40px 20px; margin: 50px 20px 20px 20px; }
+        footer h3 { letter-spacing: 2px; margin-bottom: 10px; font-size: 1.6em; }
         
         @media (max-width: 1024px) { 
             .grid-4, .grid-3 { grid-template-columns: repeat(2, 1fr); } 
