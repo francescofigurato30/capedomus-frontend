@@ -19,7 +19,6 @@
             font-family: 'Lora', serif; 
             color: var(--text-blue); 
             margin: 0; padding: 0; line-height: 1.7; scroll-behavior: smooth;
-            /* Sfondo Hero con fallback sicuro */
             background: linear-gradient(rgba(10, 61, 98, 0.4), rgba(10, 61, 98, 0.4)), url('belvedere.jpg') no-repeat center center fixed; 
             background-size: cover;
         }
@@ -82,24 +81,6 @@
             text-transform: uppercase; font-size: 0.85em; letter-spacing: 1px; transition: 0.3s; 
         }
         nav a:hover { opacity: 0.7; }
-
-        .goog-te-banner-frame.skiptranslate { display: none !important; }
-        body { top: 0 !important; }
-        
-        #google_translate_element select {
-            background-color: rgba(255, 255, 255, 0.9);
-            color: var(--primary-blue);
-            border: 1px solid var(--primary-blue);
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-family: 'Lora', serif;
-            font-size: 0.85em;
-            font-weight: 600;
-            cursor: pointer;
-            outline: none;
-        }
-        .goog-logo-link, .goog-te-gadget span { display: none !important; }
-        .goog-te-gadget { color: transparent !important; font-size: 0 !important; }
         
         .hero { 
             height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px;
@@ -192,7 +173,6 @@
             <a href="#storia">Storia & Miti</a>
             <a href="#sagre">Tradizioni</a>
             <a href="#attivita">Esperienze</a>
-            <div id="google_translate_element"></div>
         </div>
     </nav>
 
@@ -238,7 +218,7 @@
                     <p>Si narra la triste storia di Cilla, una giovane e bellissima donna sanlucidana, e del suo amato pescatore Tutù. In un giorno di feroce tempesta, l'imbarcazione del giovane si rovesciò tra i flutti. Cilla, impazzita dal dolore e sperando di salvarlo o di unirsi a lui per l'eternità, si gettò nel mare in tempesta dalla rupe. Oggi la statua di Cilla scruta malinconica l'orizzonte dal belvedere, simbolo dell'amore incondizionato e del legame indissolubile tra il borgo e il suo mare.</p>
                 </div>
                 <div class="history-img">
-                    <img src="cilla.jpg" alt="Statua della Leggenda di Cilla a San Lucido" onerror="this.src='https://images.unsplash.com/photo-1518331647614-7a1f04cd34ce?auto=format&fit=crop&w=800&q=80'">
+                    <img src="cilla.jpg" alt="Statua della Leggenda di Cilla a San Lucido">
                 </div>
             </div>
         </div>
@@ -316,18 +296,6 @@
         <p>Promozione turistica, storia e bellezze del Tirreno cosentino.</p>
         <p style="font-size: 0.8em; margin-top: 15px; opacity: 0.8;">© 2026 Borgo di San Lucido</p>
     </footer>
-
-    <!-- Script Google Traduttore -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'it', 
-                includedLanguages: 'en,fr,de,es,it', 
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
