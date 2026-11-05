@@ -9,20 +9,19 @@
     
     <style>
         :root { 
-            /* Nuova palette ispirata al logo (tortora caldo) e al mare (azzurrino) */
             --brand-brown: #7b6858; 
             --brand-sand: #d4c5b9;
             --sea-blue: #4aa0df;
             --text-dark: #4a3b32;
-            --glass-bg: rgba(255, 255, 255, 0.88); 
-            --glass-border: rgba(212, 197, 185, 0.6);
+            --glass-bg: rgba(255, 255, 255, 0.90); 
+            --glass-border: rgba(212, 197, 185, 0.7);
         }
         
         body { 
             font-family: 'Lora', serif; 
             color: var(--text-dark); 
             margin: 0; padding: 0; line-height: 1.7; scroll-behavior: smooth;
-            background: linear-gradient(rgba(74, 160, 223, 0.35), rgba(123, 104, 88, 0.5)), url('https://images.unsplash.com/photo-1499678329028-101435549a4e?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed; 
+            background: linear-gradient(rgba(10, 30, 45, 0.75), rgba(70, 58, 48, 0.85)), url('http://calabriastraordinaria.it/storage/images/12444/CS-San-Lucido-Paesaggio-Panorama-Mare-4%5BLR-13-2023%5D.JPG') no-repeat center center fixed; 
             background-size: cover;
             min-height: 100vh;
         }
@@ -37,7 +36,7 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
-            box-shadow: 0 8px 32px rgba(123, 104, 88, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
             border-radius: 16px;
         }
 
@@ -66,12 +65,11 @@
             gap: 12px;
         }
 
-        /* Colonne classiche della Navbar richiamano l'azzurrino e il tortora */
         .nav-column {
             width: 20px;
             height: 55px;
             fill: var(--brand-brown);
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
         .brand-title-wrapper h2 { 
@@ -96,18 +94,19 @@
             flex-wrap: wrap;
             justify-content: center;
         }
+        /* Colonne centrali Hero impostate sul colore del brand (--brand-brown) */
         .hero-column {
             width: 32px;
             height: 90px;
-            fill: #ffffff;
-            filter: drop-shadow(0 4px 12px rgba(74, 160, 223, 0.7));
+            fill: var(--brand-brown);
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
         }
         .hero h1 { 
             font-size: 4.2em; margin: 0; letter-spacing: 4px; text-transform: uppercase; 
-            color: #ffffff; text-shadow: 0 4px 15px rgba(74, 160, 223, 0.8); 
+            color: #ffffff; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); 
         }
         .hero p { 
-            font-size: 1.4em; font-style: italic; color: #ffffff; text-shadow: 0 2px 10px rgba(74, 160, 223, 0.8); 
+            font-size: 1.4em; font-style: italic; color: #ffffff; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8); 
         }
         
         .section { padding: 60px 20px; max-width: 1200px; margin: 30px auto; }
@@ -132,6 +131,43 @@
         .activity-card h3 { font-size: 1.4em; margin-bottom: 12px; color: var(--brand-brown); }
         .activity-card p { font-size: 0.95em; font-weight: 500; }
 
+        .newsletter-box {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .newsletter-input {
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--brand-brown);
+            flex: 1;
+            min-width: 250px;
+            font-family: 'Lora', serif;
+            outline: none;
+        }
+        .newsletter-btn {
+            padding: 12px 25px;
+            background-color: var(--brand-brown);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .newsletter-btn:hover {
+            background-color: var(--sea-blue);
+        }
+
         .whatsapp-float {
             position: fixed; bottom: 30px; right: 30px; background-color: var(--sea-blue); color: white;
             width: 60px; height: 60px; border-radius: 50%; text-align: center; font-size: 32px;
@@ -140,7 +176,7 @@
         }
         .whatsapp-float:hover { transform: scale(1.1); background-color: var(--brand-brown); }
 
-        footer { text-align: center; padding: 40px 20px; margin: 50px 20px 20px 20px; color: white; text-shadow: 0 2px 6px rgba(0,0,0,0.5); }
+        footer { text-align: center; padding: 40px 20px; margin: 50px 20px 20px 20px; color: white; text-shadow: 0 2px 6px rgba(0,0,0,0.8); }
         footer h3 { letter-spacing: 2px; margin-bottom: 10px; font-size: 1.6em; color: white; }
         
         @media (max-width: 1024px) { 
@@ -197,24 +233,24 @@
         <div class="hero-title-container">
             <svg class="hero-column" viewBox="0 0 100 300" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10,10 H90 V35 H10 Z M20,35 H80 V50 H20 Z M30,50 H70 V250 H30 Z M20,250 H80 V265 H20 Z M10,265 H90 V290 H10 Z"/>
-                <line x1="36" y1="55" x2="36" y2="245" stroke="#ffffff" stroke-width="4"/>
-                <line x1="48" y1="55" x2="48" y2="245" stroke="#ffffff" stroke-width="4"/>
-                <line x1="60" y1="55" x2="60" y2="245" stroke="#ffffff" stroke-width="4"/>
+                <line x1="36" y1="55" x2="36" y2="245" stroke="#7b6858" stroke-width="4"/>
+                <line x1="48" y1="55" x2="48" y2="245" stroke="#7b6858" stroke-width="4"/>
+                <line x1="60" y1="55" x2="60" y2="245" stroke="#7b6858" stroke-width="4"/>
             </svg>
             
             <h1>San Lucido</h1>
             
             <svg class="hero-column" viewBox="0 0 100 300" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10,10 H90 V35 H10 Z M20,35 H80 V50 H20 Z M30,50 H70 V250 H30 Z M20,250 H80 V265 H20 Z M10,265 H90 V290 H10 Z"/>
-                <line x1="36" y1="55" x2="36" y2="245" stroke="#ffffff" stroke-width="4"/>
-                <line x1="48" y1="55" x2="48" y2="245" stroke="#ffffff" stroke-width="4"/>
-                <line x1="60" y1="55" x2="60" y2="245" stroke="#ffffff" stroke-width="4"/>
+                <line x1="36" y1="55" x2="36" y2="245" stroke="#7b6858" stroke-width="4"/>
+                <line x1="48" y1="55" x2="48" y2="245" stroke="#7b6858" stroke-width="4"/>
+                <line x1="60" y1="55" x2="60" y2="245" stroke="#7b6858" stroke-width="4"/>
             </svg>
         </div>
         <p>Sospesi tra la roccia e il cielo, dove il Tirreno si fa poesia</p>
     </header>
 
-    <!-- Sezione Storia e Racconto del Borgo -->
+    <!-- Sezione Il Racconto del Borgo -->
     <section id="storia" class="section">
         <div class="glass-panel" style="padding: 40px;">
             <h2 class="section-title">Un segreto appeso tra roccia e mare</h2>
@@ -225,6 +261,12 @@
                     <h3>L'Anima di San Lucido</h3>
                     <p>C'è un luogo in Calabria in cui la terra si fa scogliera e il tempo sembra custodito gelosamente tra i vicoli in pietra. San Lucido è un abbraccio severo e dolce insieme: l'odore della salsedine che sale ripido a mescolarsi al calore antico delle facciate consumate dal sole, il respiro del vento che attraversa le <em>vinelle</em> e, ovunque, lo sguardo che si perde nel blu profondo del Tirreno. Qui la bellezza non ha bisogno di artifici; si svela nel silenzio di un panorama ammirato dalla rupe, nel ritmo lento di un paese che sa accogliere e nella ruvidezza nobile di una costa autentica. Un rifugio d'anima, pietra e mare.</p>
                     
+                    <h3 style="margin-top: 30px;">Dal Castello Ruffo al Mare</h3>
+                    <p>Le origini di San Lucido si perdono nell'epoca magno-greca. Il borgo ha vissuto il suo massimo splendore nel Medioevo, dominando la costa dall'alto della sua roccia calcarea. Segnato dalle incursioni saracene e dominato dalle imponenti rovine del Castello Ruffo, il centro storico è oggi un dedalo affascinante di vicoli e piazze panoramiche.</p>
+                    
+                    <h3 style="margin-top: 30px;">La Leggenda di Cilla</h3>
+                    <p>Si narra la triste storia di Cilla, una giovane e bellissima donna sanlucidana, e del suo amato pescatore Tutù. In un giorno di feroce tempesta, l'imbarcazione del giovane si rovesciò tra i flutti. Cilla, impazzita dal dolore e sperando di salvarlo o di unirsi a lui per l'eternità, si gettò nel mare in tempesta dalla rupe. Oggi la statua di Cilla scruta malinconica l'orizzonte dal belvedere, simbolo dell'amore incondizionato e del legame indissolubile tra il borgo e il suo mare.</p>
+
                     <h3 style="margin-top: 30px;">Cosa stiamo preparando per te</h3>
                     <p>Stiamo dando nuova vita a uno spazio che profuma di radici e autenticità. Non una semplice dimora, ma un'esperienza di <em>slow tourism</em> pensata per chi cerca il lusso dell'intimità: il comfort contemporaneo che sposa la nuda pietra, la luce dorata dei tramonti che entra dalle finestre e la promessa di un soggiorno intimo, profondo e indimenticabile. Stiamo preparando tutto con cura artigianale. Presto, le porte della nostra casa si apriranno per voi.</p>
                 </div>
@@ -234,8 +276,8 @@
 
     <!-- Sezione Sagre (4 Colonne) -->
     <section id="sagre" class="section">
-        <h2 class="section-title" style="color: white; text-shadow: 0 2px 10px rgba(74, 160, 223, 0.8);">Vivi le Tradizioni</h2>
-        <p class="section-subtitle" style="color: white; text-shadow: 0 2px 10px rgba(74, 160, 223, 0.8);">Un calendario di eventi folcloristici ed enogastronomici che animano il borgo.</p>
+        <h2 class="section-title" style="color: white; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);">Vivi le Tradizioni</h2>
+        <p class="section-subtitle" style="color: white; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);">Un calendario di eventi folcloristici ed enogastronomici che animano il borgo.</p>
         
         <div class="grid-4">
             <div class="event-card glass-panel">
@@ -292,9 +334,21 @@
         </div>
     </section>
 
+    <!-- Sezione Newsletter / Call to Action -->
+    <section class="section">
+        <div class="glass-panel newsletter-box" style="padding: 50px 30px;">
+            <h2 style="margin-top: 0;">Sii parte del nostro inizio</h2>
+            <p style="font-weight: 500; margin-bottom: 25px;">Lasciaci la tua email per ricevere in anteprima assoluta le prime immagini della struttura, i racconti inediti dal borgo e la data ufficiale della nostra apertura.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Grazie per esserti iscritto!');">
+                <input type="email" class="newsletter-input" placeholder="Inserisci il tuo indirizzo email..." required>
+                <button type="submit" class="newsletter-btn">Richiedi l'anteprima</button>
+            </form>
+        </div>
+    </section>
+
     <footer class="glass-panel">
         <h3>Capè Domus</h3>
-        <p>Sii parte del nostro inizio. Lasciaci la tua email per ricevere in anteprima assoluta le prime immagini e la data di apertura.</p>
+        <p>Promozione turistica, storia e bellezze del Tirreno cosentino.</p>
         <p style="font-size: 0.8em; margin-top: 15px; opacity: 0.8;">© 2026 Capè Domus - Borgo di San Lucido</p>
     </footer>
 
